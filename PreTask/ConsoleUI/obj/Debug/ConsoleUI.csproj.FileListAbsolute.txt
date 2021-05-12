@@ -1,0 +1,10 @@
+E:\Учёбка\GitHub\Trainings.Net\PreTask\ConsoleUI\bin\Debug\ConsoleUI.exe.config
+E:\Учёбка\GitHub\Trainings.Net\PreTask\ConsoleUI\bin\Debug\ConsoleUI.exe
+E:\Учёбка\GitHub\Trainings.Net\PreTask\ConsoleUI\bin\Debug\ConsoleUI.pdb
+E:\Учёбка\GitHub\Trainings.Net\PreTask\ConsoleUI\bin\Debug\PrinterLibrary.dll
+E:\Учёбка\GitHub\Trainings.Net\PreTask\ConsoleUI\bin\Debug\PrinterLibrary.pdb
+E:\Учёбка\GitHub\Trainings.Net\PreTask\ConsoleUI\obj\Debug\ConsoleUI.csprojAssemblyReference.cache
+E:\Учёбка\GitHub\Trainings.Net\PreTask\ConsoleUI\obj\Debug\ConsoleUI.csproj.CoreCompileInputs.cache
+E:\Учёбка\GitHub\Trainings.Net\PreTask\ConsoleUI\obj\Debug\ConsoleUI.csproj.CopyComplete
+E:\Учёбка\GitHub\Trainings.Net\PreTask\ConsoleUI\obj\Debug\ConsoleUI.exe
+E:\Учёбка\GitHub\Trainings.Net\PreTask\ConsoleUI\obj\Debug\ConsoleUI.pdb

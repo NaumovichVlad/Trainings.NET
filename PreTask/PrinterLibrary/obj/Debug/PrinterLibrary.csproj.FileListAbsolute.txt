@@ -1,0 +1,6 @@
+E:\Учёбка\GitHub\Trainings.Net\PreTask\PrinterLibrary\bin\Debug\PrinterLibrary.dll
+E:\Учёбка\GitHub\Trainings.Net\PreTask\PrinterLibrary\bin\Debug\PrinterLibrary.pdb
+E:\Учёбка\GitHub\Trainings.Net\PreTask\PrinterLibrary\obj\Debug\PrinterLibrary.csprojAssemblyReference.cache
+E:\Учёбка\GitHub\Trainings.Net\PreTask\PrinterLibrary\obj\Debug\PrinterLibrary.csproj.CoreCompileInputs.cache
+E:\Учёбка\GitHub\Trainings.Net\PreTask\PrinterLibrary\obj\Debug\PrinterLibrary.dll
+E:\Учёбка\GitHub\Trainings.Net\PreTask\PrinterLibrary\obj\Debug\PrinterLibrary.pdb
