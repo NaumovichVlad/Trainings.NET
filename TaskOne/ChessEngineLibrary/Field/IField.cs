@@ -1,0 +1,16 @@
+﻿using ChessEngineLibrary.Players;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ChessEngineLibrary.Field
+{
+    public interface IField
+    {
+        List<IPlayer> GetPlayers();
+
+
+    }
+}
