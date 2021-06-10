@@ -18,7 +18,7 @@ namespace ChessEngineLibrary.Field
             var position = figure.Position;
             log += string.Format(
                 "{0} {1} {2}{3} > ", figure.Owner.FiguresColor, figure.GetFigureType(), 
-                letters[position.GetCoordinates()[0]], position.GetCoordinates()[1] + 1
+                letters[position.CoordinateX], position.CoordinateY + 1
             );
         }
 

@@ -10,12 +10,15 @@ namespace ChessEngineLibrary.Field
 {
     public class Field
     {
-        FigureCollection figures;
+        IFiguresCollection figures = new FigureCollection();
         List<IPlayer> players;
+
+        public Vector Size { get; }
 
         public Field (IPlayer playerOne, IPlayer playerTwo)
         {
             players = new List<IPlayer>() { playerOne, playerTwo };
+            Size = new Vector(7, 7);
             InitializeFigures();
         }
 
@@ -51,5 +54,18 @@ namespace ChessEngineLibrary.Field
                 }
             }
         }
+
+        /*
+        public List<Vector> FigureSelectedAction(Vector position, IPlayer player)
+        {
+            List<Vector> positions;
+            var figure = figures.GetFigureByPosition(position);
+            if (figure != null && figure.Owner.FiguresColor == player.FiguresColor)
+            {
+
+            }
+            return positions;
+        }
+        */
     }
 }

@@ -12,6 +12,9 @@ namespace ChessEngineLibrary.Figures
     {
         List<IFigure> figures;
 
+        public FigureCollection()
+        { }
+
         public FigureCollection (List<IFigure> figures)
         {
             this.figures = figures;
@@ -35,7 +38,7 @@ namespace ChessEngineLibrary.Figures
 
         public IFigure GetFigureByPosition(Vector position)
         {
-            var figureByPosition = figures.First(f => f.Position.GetCoordinates() == position.GetCoordinates());
+            var figureByPosition = figures.First(f => f.Position.Equals(position));
             return figureByPosition;
         }
 
@@ -47,7 +50,7 @@ namespace ChessEngineLibrary.Figures
 
         public void RemoveFigure(Vector position)
         {
-            figures.Remove(figures.First(f => f.Position.GetCoordinates() == position.GetCoordinates()));
+            figures.Remove(figures.First(f => f.Equals(position)));
         }
     }
 }

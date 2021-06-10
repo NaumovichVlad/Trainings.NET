@@ -1,4 +1,5 @@
 ﻿using ChessEngineLibrary.Field;
+using ChessEngineLibrary.FigureActions;
 using ChessEngineLibrary.Players;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,15 @@ namespace ChessEngineLibrary.Figures
     {
         public Bishop(IPlayer owner, Vector position)
             : base(owner, position)
-        { }
+        {
+            Action = new BishopAction();
+        }
+
+        public Bishop(Figure figure)
+            : base(figure)
+        {
+            Action = new BishopAction();
+        }
 
         public override FigureType GetFigureType()
         {

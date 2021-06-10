@@ -1,4 +1,5 @@
 ﻿using ChessEngineLibrary.Field;
+using ChessEngineLibrary.FigureActions;
 using ChessEngineLibrary.Players;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,15 @@ namespace ChessEngineLibrary.Figures
     {
         public Queen(IPlayer owner, Vector position)
             : base(owner, position)
-        { }
+        {
+            Action = new QueenAction();
+        }
+
+        public Queen(Figure figure)
+            : base(figure)
+        {
+            Action = new QueenAction();
+        }
 
         public override FigureType GetFigureType()
         {

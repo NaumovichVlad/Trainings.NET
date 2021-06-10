@@ -1,4 +1,5 @@
 ﻿using ChessEngineLibrary.Field;
+using ChessEngineLibrary.FigureActions;
 using ChessEngineLibrary.Players;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,16 @@ namespace ChessEngineLibrary.Figures
     {
         public Rook(IPlayer owner, Vector position)
             : base(owner, position)
-        { }
+        { 
+            Action = new RookAction(); 
+        }
+
+        public Rook(Figure figure)
+            : base(figure)
+        {
+            Action = new RookAction();
+        }
+
         public override FigureType GetFigureType()
         {
             return FigureType.Rook;

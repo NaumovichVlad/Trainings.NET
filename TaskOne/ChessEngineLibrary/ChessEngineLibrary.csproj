@@ -47,7 +47,13 @@
     <Compile Include="Field\ILog.cs" />
     <Compile Include="Field\Log.cs" />
     <Compile Include="Field\Vector.cs" />
-    <Compile Include="FigureActions\FigureAction.cs" />
+    <Compile Include="FigureActions\BishopAction.cs" />
+    <Compile Include="FigureActions\IFigureAction.cs" />
+    <Compile Include="FigureActions\KingAction.cs" />
+    <Compile Include="FigureActions\KnightAction.cs" />
+    <Compile Include="FigureActions\PawnAction.cs" />
+    <Compile Include="FigureActions\QueenAction.cs" />
+    <Compile Include="FigureActions\RookAction.cs" />
     <Compile Include="Figures\Bishop.cs" />
     <Compile Include="Figures\Figure.cs" />
     <Compile Include="Figures\FigureCollection.cs" />

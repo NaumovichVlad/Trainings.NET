@@ -9,8 +9,7 @@ namespace ChessEngineLibrary.Field
 {
     public interface IField
     {
+        Vector Size { get; }
         List<IPlayer> GetPlayers();
-
-
     }
 }
