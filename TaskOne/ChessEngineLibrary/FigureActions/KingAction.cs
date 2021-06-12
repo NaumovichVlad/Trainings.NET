@@ -9,13 +9,23 @@ namespace ChessEngineLibrary.FigureActions
 {
     public class KingAction : IFigureAction
     {
-        public bool CheckMove(Vector position, Vector newPosition)
+        public List<Vector> GetPossibleMoves(Vector position, Vector fieldSize)
         {
-            var flag = false;
-            if (!position.Equals(newPosition))
-                if (Math.Abs(position.CoordinateX - newPosition.CoordinateX) <= 1 || Math.Abs(position.CoordinateY - newPosition.CoordinateY) <= 1)
-                    flag = true;
-            return flag;
+            var possiblePositions = new List<Vector>();
+            possiblePositions.Add(new Vector(position.CoordinateX + 1, position.CoordinateY - 1));
+            possiblePositions.Add(new Vector(position.CoordinateX + 1, position.CoordinateY));
+            possiblePositions.Add(new Vector(position.CoordinateX + 1, position.CoordinateY + 1));
+            possiblePositions.Add(new Vector(position.CoordinateX, position.CoordinateY));
+            possiblePositions.Add(new Vector(position.CoordinateX, position.CoordinateY));
+            possiblePositions.Add(new Vector(position.CoordinateX - 1, position.CoordinateY - 1));
+            possiblePositions.Add(new Vector(position.CoordinateX - 1, position.CoordinateY));
+            possiblePositions.Add(new Vector(position.CoordinateX - 1, position.CoordinateY + 1));
+
+            foreach (var possiblePosition in possiblePositions)
+                if (possiblePosition.CoordinateX >= fieldSize.CoordinateX || possiblePosition.CoordinateY >= fieldSize.CoordinateY)
+                    possiblePositions.Remove(possiblePosition);
+
+            return possiblePositions;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace ChessEngineLibrary.FigureActions
 {
     public interface IFigureAction
     {
-        bool CheckMove(Vector position, Vector newPosition);
+        List<Vector> GetPossibleMoves(Vector position, Vector fieldSize);
 
     }
 }

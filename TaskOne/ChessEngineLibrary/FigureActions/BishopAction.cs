@@ -1,22 +1,23 @@
 ﻿using ChessEngineLibrary.Field;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChessEngineLibrary.FigureActions
 {
     public class BishopAction : IFigureAction
     {
-        public bool CheckMove(Vector position, Vector newPosition)
+        public List<Vector> GetPossibleMoves(Vector position, Vector fieldSize)
         {
-            if (!position.Equals(newPosition) &&
-                Math.Abs(position.CoordinateX - newPosition.CoordinateX) == Math.Abs(position.CoordinateY - newPosition.CoordinateY)
-            )
-                return true;
-            else
-                return false;
+            var possiblePositions = new List<Vector>();
+            for (var i = 0; position.CoordinateX + i < fieldSize.CoordinateX && position.CoordinateY + i < fieldSize.CoordinateY; i++)
+                possiblePositions.Add(new Vector(position.CoordinateX + i, position.CoordinateY + i));
+            for (var i = 0; position.CoordinateX + i < fieldSize.CoordinateX && position.CoordinateY - i >= 0; i++)
+                possiblePositions.Add(new Vector(position.CoordinateX + i, position.CoordinateY - i));
+            for (var i = 0; position.CoordinateX - i >= 0 && position.CoordinateY + i < fieldSize.CoordinateY; i++)
+                possiblePositions.Add(new Vector(position.CoordinateX - i, position.CoordinateY + i));
+            for (var i = 0; position.CoordinateX - i >= 0 && position.CoordinateY - i >= 0; i++)
+                possiblePositions.Add(new Vector(position.CoordinateX - i, position.CoordinateY - i));
+            possiblePositions.RemoveAll(p => p.CoordinateX == position.CoordinateX && p.CoordinateY == position.CoordinateY);
+            return possiblePositions;
         }
     }
 }

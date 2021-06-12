@@ -9,17 +9,14 @@ namespace ChessEngineLibrary.FigureActions
 {
     public class QueenAction : IFigureAction
     {
-        public bool CheckMove(Vector position, Vector newPosition)
+        IFigureAction rookAction = new RookAction();
+        IFigureAction bishopAction = new BishopAction();
+        public List<Vector> GetPossibleMoves(Vector position, Vector fieldSize)
         {
-            var flag = false;
-            if(!position.Equals(newPosition))
-            {
-                if (position.CoordinateX == newPosition.CoordinateX || position.CoordinateY == newPosition.CoordinateY ||
-                    Math.Abs(position.CoordinateX - newPosition.CoordinateX) == Math.Abs(position.CoordinateY - newPosition.CoordinateY)
-                )
-                    flag = true;
-            }
-            return flag;
+            var firstGroupPossibleActions = rookAction.GetPossibleMoves(position, fieldSize);
+            var secondGroupPossibleActions = bishopAction.GetPossibleMoves(position, fieldSize);
+            var possibleActions = firstGroupPossibleActions.Concat(secondGroupPossibleActions).ToList();
+            return possibleActions;
         }
     }
 }

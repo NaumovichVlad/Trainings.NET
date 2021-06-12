@@ -8,18 +8,21 @@ using System.Threading.Tasks;
 
 namespace ChessEngineLibrary.Field
 {
-    public class Field
+    public class Field : IField
     {
+        IFieldHandler fieldHandler;
         IFiguresCollection figures = new FigureCollection();
         List<IPlayer> players;
+        ILog log = new Log();
 
         public Vector Size { get; }
 
         public Field (IPlayer playerOne, IPlayer playerTwo)
         {
             players = new List<IPlayer>() { playerOne, playerTwo };
-            Size = new Vector(7, 7);
+            Size = new Vector(8, 8);
             InitializeFigures();
+            fieldHandler = new FieldHandler(figures);
         }
 
         private void InitializeFigures()
@@ -28,7 +31,7 @@ namespace ChessEngineLibrary.Field
             {
                 if (player.FiguresColor == Color.White)
                 {
-                    for (var i = 0; i < 7; i++)
+                    for (var i = 0; i < 8; i++)
                         figures.AddFigure(new Pawn(player, new Vector(i, 1)));
                     figures.AddFigure(new Knight(player, new Vector(1, 0)));
                     figures.AddFigure(new Knight(player, new Vector(6, 0)));
@@ -36,12 +39,12 @@ namespace ChessEngineLibrary.Field
                     figures.AddFigure(new Bishop(player, new Vector(5, 0)));
                     figures.AddFigure(new Rook(player, new Vector(0, 0)));
                     figures.AddFigure(new Rook(player, new Vector(7, 0)));
-                    figures.AddFigure(new Knight(player, new Vector(3, 0)));
-                    figures.AddFigure(new Knight(player, new Vector(4, 0)));
+                    figures.AddFigure(new Queen(player, new Vector(3, 0)));
+                    figures.AddFigure(new King(player, new Vector(4, 0)));
                 }
                 else
                 {
-                    for (var i = 0; i < 7; i++)
+                    for (var i = 0; i < 8; i++)
                         figures.AddFigure(new Pawn(player, new Vector(i, 6)));
                     figures.AddFigure(new Knight(player, new Vector(1, 7)));
                     figures.AddFigure(new Knight(player, new Vector(6, 7)));
@@ -49,23 +52,67 @@ namespace ChessEngineLibrary.Field
                     figures.AddFigure(new Bishop(player, new Vector(5, 7)));
                     figures.AddFigure(new Rook(player, new Vector(0, 7)));
                     figures.AddFigure(new Rook(player, new Vector(7, 7)));
-                    figures.AddFigure(new Knight(player, new Vector(3, 7)));
-                    figures.AddFigure(new Knight(player, new Vector(4, 7)));
+                    figures.AddFigure(new Queen(player, new Vector(3, 7)));
+                    figures.AddFigure(new King(player, new Vector(4, 7)));
                 }
             }
         }
 
-        /*
-        public List<Vector> FigureSelectedAction(Vector position, IPlayer player)
+        public List<Vector> GetPossibleMoves(Vector position, IPlayer player)
         {
-            List<Vector> positions;
-            var figure = figures.GetFigureByPosition(position);
-            if (figure != null && figure.Owner.FiguresColor == player.FiguresColor)
+            List<Vector> possibleMoves = null;
+            List<Vector> deleteMoves = new List<Vector>();
+            var figure = figures.GetActiveFigureByPosition(position);
+            if (figure.Owner.Equals(player))
             {
+                possibleMoves = figure.Action.GetPossibleMoves(figure.Position, Size);
+                foreach (var possibleMove in possibleMoves)
+                    if (!fieldHandler.CheckCellOccupancy(figure.Position, possibleMove))
+                        deleteMoves.Add(possibleMove);
 
+                foreach (var possibleMove in possibleMoves)
+                    if (figures.GetActiveFigureByPosition(possibleMove) != null)
+                        if(figures.GetActiveFigureByPosition(possibleMove).Owner.Equals(player))
+                            deleteMoves.Add(possibleMove);
             }
-            return positions;
+            foreach (var delete in deleteMoves)
+                possibleMoves.Remove(delete);
+            return possibleMoves;
         }
-        */
+        
+        public void Move(Vector position, Vector newPosition, IPlayer player)
+        {
+            var possibleMoves = GetPossibleMoves(position, player);
+            foreach (var move in possibleMoves)
+            {
+                if (move.Equals(newPosition))
+                {
+                    if (figures.GetActiveFigureByPosition(newPosition) != null)
+                    {
+                        var opponentFigure = figures.GetActiveFigureByPosition(newPosition);
+                        opponentFigure.MakePassive();
+                    }
+                    var figure = figures.GetActiveFigureByPosition(position);
+                    figure.Position.ChangeCoordinates(newPosition.CoordinateX, newPosition.CoordinateY);
+                    log.AddTurn(figure);
+                    break;
+                }
+            }
+        }
+
+        public IFiguresCollection GetFigures()
+        {
+            return figures;
+        }
+
+        public void SetFigures(IFiguresCollection figures)
+        {
+            this.figures = figures;
+        }
+
+        public ILog GetLog()
+        {
+            return log;
+        }
     }
 }

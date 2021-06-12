@@ -13,8 +13,11 @@ namespace ChessEngineLibrary.Figures
         void AddFigure(IFigure figure);
         void RemoveFigure(Vector position);
         List<IFigure> GetFiguresByOwner(IPlayer player);
-        IFigure GetFigureByPosition(Vector position);
+        IFigure GetActiveFigureByPosition(Vector position);
+        IFigure GetKing(IPlayer player);
         List<IFigure> GetPassiveFigures();
+        List<IFigure> GetActiveFigures();
         List<IFigure> GetFigures();
+        IEnumerator<IFigure> GetEnumerator();
     }
 }

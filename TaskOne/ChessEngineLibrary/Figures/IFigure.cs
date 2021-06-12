@@ -1,4 +1,5 @@
 ﻿using ChessEngineLibrary.Field;
+using ChessEngineLibrary.FigureActions;
 using ChessEngineLibrary.Players;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace ChessEngineLibrary.Figures
         Vector Position { get; }
         bool IsActive { get; }
         bool IsFirstTurn { get; set; }
+        IFigureAction Action { get; }
         void MakePassive();
         FigureType GetFigureType();
     }

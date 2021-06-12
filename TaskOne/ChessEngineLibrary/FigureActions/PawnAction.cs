@@ -9,14 +9,18 @@ namespace ChessEngineLibrary.FigureActions
 {
     public class PawnAction : IFigureAction
     {
-        public bool CheckMove(Vector position, Vector newPosition)
+        public List<Vector> GetPossibleMoves(Vector position, Vector fieldSize)
         {
-            var flag = false;
-            if (!position.Equals(newPosition))
-            {
+            var possiblePositions = new List<Vector>();
+            possiblePositions.Add(new Vector(position.CoordinateX + 1, position.CoordinateY + 1));
+            possiblePositions.Add(new Vector(position.CoordinateX - 1, position.CoordinateY + 1));
+            possiblePositions.Add(new Vector(position.CoordinateX, position.CoordinateY + 1));
 
-            }
-            return flag;
+            foreach (var possiblePosition in possiblePositions)
+                if (possiblePosition.CoordinateX >= fieldSize.CoordinateX || possiblePosition.CoordinateY >= fieldSize.CoordinateY)
+                    possiblePositions.Remove(possiblePosition);
+
+            return possiblePositions;
         }
     }
 }

@@ -17,5 +17,20 @@ namespace ChessEngineLibrary.Players
             Username = username;
             FiguresColor = color;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj.GetType() != GetType())
+                return false;
+
+            Player player = (Player)obj;
+            return (Username == player.Username && FiguresColor == player.FiguresColor && IsActive == player.IsActive);
+        }
+
+        public override int GetHashCode()
+        {
+            var result = int.Parse(Username, System.Globalization.NumberStyles.Any);
+            return result;
+        }
     }
 }

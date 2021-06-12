@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="Enums.cs" />
     <Compile Include="Field\Field.cs" />
+    <Compile Include="Field\FieldHandler.cs" />
     <Compile Include="Field\IField.cs" />
+    <Compile Include="Field\IFieldHandler.cs" />
     <Compile Include="Field\ILog.cs" />
     <Compile Include="Field\Log.cs" />
     <Compile Include="Field\Vector.cs" />

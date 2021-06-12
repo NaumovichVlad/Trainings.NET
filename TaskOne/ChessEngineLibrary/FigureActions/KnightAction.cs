@@ -9,15 +9,25 @@ namespace ChessEngineLibrary.FigureActions
 {
     public class KnightAction : IFigureAction
     {
-        public bool CheckMove(Vector position, Vector newPosition)
+        public List<Vector> GetPossibleMoves(Vector position, Vector fieldSize)
         {
-            var flag = false;
-            if (!position.Equals(newPosition))
-                if ((Math.Abs(position.CoordinateX - newPosition.CoordinateX) == 1 && Math.Abs(position.CoordinateY - newPosition.CoordinateY) == 2) ||
-                   (Math.Abs(position.CoordinateX - newPosition.CoordinateX) == 2 && Math.Abs(position.CoordinateY - newPosition.CoordinateY) == 1)
-                )
-                    flag =true;
-            return flag;
+            List<Vector> forDelete = new List<Vector>();
+            var possiblePositions = new List<Vector>();
+            possiblePositions.Add(new Vector(position.CoordinateX + 2, position.CoordinateY + 1));
+            possiblePositions.Add(new Vector(position.CoordinateX + 2, position.CoordinateY - 1));
+            possiblePositions.Add(new Vector(position.CoordinateX - 2, position.CoordinateY + 1));
+            possiblePositions.Add(new Vector(position.CoordinateX - 2, position.CoordinateY - 1));
+            possiblePositions.Add(new Vector(position.CoordinateX + 1, position.CoordinateY + 2));
+            possiblePositions.Add(new Vector(position.CoordinateX - 1, position.CoordinateY + 2));
+            possiblePositions.Add(new Vector(position.CoordinateX + 1, position.CoordinateY - 2));
+            possiblePositions.Add(new Vector(position.CoordinateX - 1, position.CoordinateY - 2));
+
+            foreach (var possiblePosition in possiblePositions)
+                if (possiblePosition.CoordinateX >= fieldSize.CoordinateX || possiblePosition.CoordinateY >= fieldSize.CoordinateY)
+                    forDelete.Add(possiblePosition);
+            foreach (var delete in forDelete)
+                possiblePositions.Remove(delete);
+            return possiblePositions;
         }
     }
 }

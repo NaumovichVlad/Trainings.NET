@@ -8,3 +8,5 @@ E:\Учёбка\GitHub\Trainings.Net\TaskOne\ChessEngineLibrary\obj\Debug\ChessE
 E:\Учёбка\GitHub\Trainings.Net\TaskOne\ChessEngineLibrary\obj\Debug\ChessEngineLibrary.csproj.CoreCompileInputs.cache
 E:\Учёбка\GitHub\Trainings.Net\TaskOne\ChessEngineLibrary\obj\Debug\ChessEngineLibrary.dll
 E:\Учёбка\GitHub\Trainings.Net\TaskOne\ChessEngineLibrary\obj\Debug\ChessEngineLibrary.pdb
+E:\Учёбка\GitHub\Trainings.Net\TaskOne\ChessEngineLibrary\bin\Debug\ChessEngineLibrary.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskOne\ChessEngineLibrary\bin\Debug\ChessEngineLibrary.pdb

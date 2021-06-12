@@ -40,5 +40,18 @@ namespace ChessEngineLibraryTests
             var actual = log.GetLog();
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Log_Test()
+        {
+            IPlayer playerOne = new Player("vladislav", Color.White);
+            IPlayer playerTwo = new Player("vova", Color.Black);
+            IField field = new Field(playerOne, playerTwo);
+            field.Move(new Vector(1, 0), new Vector(0, 2), playerOne);
+            field.Move(new Vector(6, 7), new Vector(5, 5), playerTwo);
+            var expected = "White Knight a3 > Black Knight f6 > ";
+            var actual = field.GetLog().GetLog();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
