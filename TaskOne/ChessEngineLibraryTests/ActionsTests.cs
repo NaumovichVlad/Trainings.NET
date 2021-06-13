@@ -16,19 +16,6 @@ namespace ChessEngineLibraryTests
             IPlayer playerOne = new Player("vladislav", Color.White);
             IPlayer playerTwo = new Player("vlad", Color.Black);
             IField field = new Field(playerOne, playerTwo);
-            field.Move(new Vector(1, 0), new Vector(0, 2), playerOne);
-            var figures = field.GetFigures();
-            var actual = figures.GetActiveFigureByPosition(new Vector(0, 2)).GetFigureType();
-            var expected = FigureType.Knight;
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void KnightTestTwo()
-        {
-            IPlayer playerOne = new Player("vladislav", Color.White);
-            IPlayer playerTwo = new Player("vlad", Color.Black);
-            IField field = new Field(playerOne, playerTwo);
             field.Move(new Vector(1, 0), new Vector(7, 2), playerOne);
             var figures = field.GetFigures();
             var actual = figures.GetActiveFigureByPosition(new Vector(7, 2));

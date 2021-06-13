@@ -9,13 +9,9 @@ namespace ChessEngineLibrary.Field
 {
     public class FieldHandler : IFieldHandler
     {
-        IFiguresCollection figures;
+        
 
-        public FieldHandler (IFiguresCollection figures)
-        {
-            this.figures = figures;
-        }
-        public bool CheckCellOccupancy(Vector position, Vector newPosition)
+        public bool CheckCellOccupancy(Vector position, Vector newPosition, IFiguresCollection figures)
         {
             var flag = false;
             if (Math.Abs(position.CoordinateX - newPosition.CoordinateX) < 2 && Math.Abs(position.CoordinateY - newPosition.CoordinateY) < 2)
@@ -26,17 +22,17 @@ namespace ChessEngineLibrary.Field
             {
                 
                 if (position.CoordinateX == newPosition.CoordinateX || position.CoordinateY == newPosition.CoordinateY)
-                    flag = CheckLine(position, newPosition);
+                    flag = CheckLine(position, newPosition, figures);
                 else
                 {
                     if (Math.Abs(position.CoordinateX - newPosition.CoordinateX) == Math.Abs(position.CoordinateY - newPosition.CoordinateY))
-                        flag = CheckDiagonal(position, newPosition);
+                        flag = CheckDiagonal(position, newPosition, figures);
                 }
             }
             return flag;
         }
 
-        private bool CheckLine(Vector position, Vector newPosition)
+        private bool CheckLine(Vector position, Vector newPosition, IFiguresCollection figures)
         {
             int minXCoordinate;
             int maxXCoordinate;
@@ -81,7 +77,7 @@ namespace ChessEngineLibrary.Field
             return true;
         }
 
-        private bool CheckDiagonal(Vector position, Vector newPosition)
+        private bool CheckDiagonal(Vector position, Vector newPosition, IFiguresCollection figures)
         {
             if (position.CoordinateX > newPosition.CoordinateX)
             {

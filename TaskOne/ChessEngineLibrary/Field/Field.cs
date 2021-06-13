@@ -22,7 +22,7 @@ namespace ChessEngineLibrary.Field
             players = new List<IPlayer>() { playerOne, playerTwo };
             Size = new Vector(8, 8);
             InitializeFigures();
-            fieldHandler = new FieldHandler(figures);
+            fieldHandler = new FieldHandler();
         }
 
         private void InitializeFigures()
@@ -67,7 +67,7 @@ namespace ChessEngineLibrary.Field
             {
                 possibleMoves = figure.Action.GetPossibleMoves(figure.Position, Size);
                 foreach (var possibleMove in possibleMoves)
-                    if (!fieldHandler.CheckCellOccupancy(figure.Position, possibleMove))
+                    if (!fieldHandler.CheckCellOccupancy(figure.Position, possibleMove, figures))
                         deleteMoves.Add(possibleMove);
 
                 foreach (var possibleMove in possibleMoves)
