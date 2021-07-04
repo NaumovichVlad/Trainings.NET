@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarFleetLib.Cargos
+namespace CarFleet.Cargos
 {
     abstract public class Cargo : ICargo
     {

@@ -46,11 +46,16 @@
   <ItemGroup>
     <Compile Include="Cargos\Brick.cs" />
     <Compile Include="Cargos\Cargo.cs" />
+    <Compile Include="Cargos\CargoType.cs" />
     <Compile Include="Cargos\Chemistry.cs" />
     <Compile Include="Cargos\ICargo.cs" />
+    <Compile Include="Cargos\ICargoType.cs" />
     <Compile Include="Cargos\Materials.cs" />
     <Compile Include="Cargos\Products.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="FileProcessor\CargoTypesXml.cs" />
+    <Compile Include="FileProcessor\Connection.cs" />
+    <Compile Include="FileProcessor\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cargoTypes>
+  <cargoType>
+    <typeId>1</typeId>
+    <typeName>Products</typeName>
+  </cargoType>
+  <cargoType>
+    <typeId>2</typeId>
+    <typeName>Chemistry</typeName>
+  </cargoType>
+  <cargoType>
+    <typeId>3</typeId>
+    <typeName>Materials</typeName>
+  </cargoType>
+</cargoTypes>

@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarFleet
+namespace CarFleet.Cargos
 {
-    public enum CargoCategories
+    public interface ICargoType
     {
-        Chemistry,
-        Products,
-        Materials
+        int TypeId { get; set; }
+        string TypeName { get; set; }
     }
 }

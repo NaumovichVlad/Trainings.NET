@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarFleetLib", "CarFleet\Car
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarFleetLibTests", "CarFleetTestsLib\CarFleetLibTests.csproj", "{D7F4E9A7-F8FB-4BE3-A13B-3D68C1384977}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F0EE06FB-3669-40CD-95E1-9A51213BFEE2}"
+	ProjectSection(SolutionItems) = preProject
+		Data\CargoTypes.xml = Data\CargoTypes.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
