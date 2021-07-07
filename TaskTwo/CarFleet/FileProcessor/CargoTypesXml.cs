@@ -1,6 +1,7 @@
 ﻿using CarFleet.Cargos;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,20 +13,23 @@ namespace CarFleet.FileProcessor
     {
         public void Create(ICargoType cargoType)
         {
-            using (XmlWriter writer = XmlWriter.Create("cargoTypes.xml"))
+            using (StreamWriter streamWriter = new StreamWriter(GetCargoTypesConnection(), true))
             {
-                writer.WriteStartDocument();
-                writer.WriteStartElement("cargoTypes");
-                writer.WriteStartElement("cargoType");
-                writer.WriteStartElement("typeId");
-                writer.WriteString(cargoType.TypeId.ToString());
-                writer.WriteEndElement();
-                writer.WriteStartElement("typeName");
-                writer.WriteString(cargoType.TypeName);
-                writer.WriteEndElement();
-                writer.WriteEndElement();
-                writer.WriteEndElement();
-                writer.WriteEndDocument();
+                XmlWriterSettings settings = new XmlWriterSettings();
+                settings.Indent = true;
+                settings.NewLineOnAttributes = true;
+                settings.OmitXmlDeclaration = true;
+                using (XmlWriter xmlWriter = XmlWriter.Create(streamWriter, settings))
+                {
+                    xmlWriter.WriteStartElement("cargoType");
+                    xmlWriter.WriteStartElement("typeId");
+                    xmlWriter.WriteString(cargoType.TypeId.ToString());
+                    xmlWriter.WriteEndElement();
+                    xmlWriter.WriteStartElement("typeName");
+                    xmlWriter.WriteString(cargoType.TypeName);
+                    xmlWriter.WriteEndElement();
+                    xmlWriter.WriteEndElement();
+                }
             }
         }
 

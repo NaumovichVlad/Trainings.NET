@@ -12,4 +12,7 @@
     <typeId>3</typeId>
     <typeName>Materials</typeName>
   </cargoType>
-</cargoTypes>
+</cargoTypes><cargoType>
+  <typeId>1</typeId>
+  <typeName>someType</typeName>
+</cargoType>
