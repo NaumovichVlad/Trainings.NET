@@ -16,3 +16,5 @@ E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetTestsLib\obj\Debug\CarFleet
 E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetTestsLib\obj\Debug\CarFleetLibTests.csproj.CopyComplete
 E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetTestsLib\obj\Debug\CarFleetTestsLib.dll
 E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetTestsLib\obj\Debug\CarFleetTestsLib.pdb
+E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetTestsLib\bin\Debug\ExceptionsLib.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetTestsLib\bin\Debug\ExceptionsLib.pdb

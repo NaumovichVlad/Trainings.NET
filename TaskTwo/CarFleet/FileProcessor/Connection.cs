@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace CarFleet.FileProcessor
 {
-    public class Connection
+    abstract public class Connection
     {
         private string connectionString = "../../../Data/";
 
         protected string GetCargoTypesConnection()
         {
             return connectionString + "cargoTypes.xml";
+        }
+        protected string GetCargoTypesSchemaConnection()
+        {
+            return connectionString + "cargoTypesSchema.xsd";
         }
     }
 }

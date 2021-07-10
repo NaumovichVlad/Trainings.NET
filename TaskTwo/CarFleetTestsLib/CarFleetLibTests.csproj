@@ -47,10 +47,11 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CargoTests.cs" />
-    <Compile Include="FileProcessorTests\CargoTypesTests.cs" />
+    <Compile Include="FileProcessorTests\CargoTypesXmlTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +61,10 @@
     <ProjectReference Include="..\CarFleet\CarFleetLib.csproj">
       <Project>{F9BD8DFD-66A0-4BB2-A694-4C6335900CFB}</Project>
       <Name>CarFleetLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExceptionsLib\ExceptionsLib.csproj">
+      <Project>{8c5a9c0b-2f43-460f-b2ba-2464c97ca10f}</Project>
+      <Name>ExceptionsLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

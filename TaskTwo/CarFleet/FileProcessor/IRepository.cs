@@ -9,7 +9,7 @@ namespace CarFleet.FileProcessor
     public interface IRepository<T>
          where T : class
     {
-        void Create(T t);
-        List<T> Read();
+        void Save(List<T> t);
+        List<T> Load();
     }
 }

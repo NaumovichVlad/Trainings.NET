@@ -6,20 +6,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Schema;
+using ExceptionsLib;
 
 namespace CarFleet.FileProcessor
 {
     public class CargoTypesXml : Connection, IRepository<ICargoType>
     {
-        public void Create(ICargoType cargoType)
+        public void Save(List<ICargoType> cargoTypes)
         {
-            using (StreamWriter streamWriter = new StreamWriter(GetCargoTypesConnection(), true))
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.NewLineOnAttributes = true;
+            using (XmlWriter xmlWriter = XmlWriter.Create(GetCargoTypesConnection(), settings))
             {
-                XmlWriterSettings settings = new XmlWriterSettings();
-                settings.Indent = true;
-                settings.NewLineOnAttributes = true;
-                settings.OmitXmlDeclaration = true;
-                using (XmlWriter xmlWriter = XmlWriter.Create(streamWriter, settings))
+                xmlWriter.WriteStartDocument();
+                xmlWriter.WriteStartElement("cargoTypes");
+                foreach (var cargoType in cargoTypes)
                 {
                     xmlWriter.WriteStartElement("cargoType");
                     xmlWriter.WriteStartElement("typeId");
@@ -30,20 +33,47 @@ namespace CarFleet.FileProcessor
                     xmlWriter.WriteEndElement();
                     xmlWriter.WriteEndElement();
                 }
+                xmlWriter.WriteEndElement();
+                xmlWriter.WriteEndDocument();
             }
         }
 
-        public List<ICargoType> Read()
+        public List<ICargoType> Load()
         {
             var cargoTypes = new List<ICargoType>();
-            using (XmlReader reader = XmlReader.Create(GetCargoTypesConnection()))
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.Schemas.Add(null, GetCargoTypesSchemaConnection());
+            settings.ValidationType = ValidationType.Schema;
+            settings.ValidationEventHandler += new ValidationEventHandler(CargoTypesValidationEventHandler);
+            using (XmlReader reader = XmlReader.Create(GetCargoTypesConnection(), settings))
             {
+                var id = 0;
+                var typeName = string.Empty;
                 while (reader.Read())
                 {
-                    //В разработочке
+                    if (reader.NodeType == XmlNodeType.Element)
+                    {
+                        switch (reader.Name)
+                        {
+                            case "typeId":
+                                reader.Read();
+                                id = Convert.ToInt32(reader.Value);
+                                break;
+                            case "typeName":
+                                reader.Read();
+                                typeName = Convert.ToString(reader.Value);
+                                cargoTypes.Add(new CargoType(id, typeName));
+                                break;
+                        }
+                    }
                 }
             }
             return cargoTypes;
+        }
+
+        private void CargoTypesValidationEventHandler(object sender, ValidationEventArgs e)
+        {
+            throw new SchemaValidationException(e.Message);
         }
     }
 }
