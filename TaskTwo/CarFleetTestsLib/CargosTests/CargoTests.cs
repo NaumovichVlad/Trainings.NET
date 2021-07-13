@@ -1,8 +1,9 @@
 ﻿using CarFleet.Cargos;
+using CarFleet.Cargos.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace CarFleetLibTests
+namespace CarFleetLibTests.CargosTests
 {
     [TestClass]
     public class CargoTests
@@ -10,8 +11,8 @@ namespace CarFleetLibTests
         [TestMethod]
         public void Equals_TestOne()
         {
-            ICargo brickOne = new Brick(1.05, 1.02);
-            ICargo brickTwo = new Brick(1.05, 1.02);
+            ICargo brickOne = new Brick(1, 1.05, 1.02, false);
+            ICargo brickTwo = new Brick(1, 1.05, 1.02, false);
             var actual = brickOne.Equals(brickTwo);
             var expected = true;
             Assert.AreEqual(expected, actual);
@@ -20,8 +21,8 @@ namespace CarFleetLibTests
         [TestMethod]
         public void Equals_TestTwo()
         {
-            ICargo brickOne = new Brick(1.01, 1.02);
-            ICargo brickTwo = new Brick(1.05, 1.02);
+            ICargo brickOne = new Brick(1, 1.01, 1.02, true);
+            ICargo brickTwo = new Brick(1, 1.05, 1.02, false);
             var actual = brickOne.Equals(brickTwo);
             var expected = false;
             Assert.AreEqual(expected, actual);

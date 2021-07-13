@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cargos>
+  <cargo>
+    <cargoId>1</cargoId>
+    <cargoName>SomeType</cargoName>
+  </cargo>
+</cargos>

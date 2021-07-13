@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarFleetLibTests", "CarFlee
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F0EE06FB-3669-40CD-95E1-9A51213BFEE2}"
 	ProjectSection(SolutionItems) = preProject
+		Data\Cargos.xml = Data\Cargos.xml
 		Data\CargoTypes.xml = Data\CargoTypes.xml
 		Data\CargoTypesSchema.xsd = Data\CargoTypesSchema.xsd
 	EndProjectSection

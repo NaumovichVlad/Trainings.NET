@@ -50,7 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CargoTests.cs" />
+    <Compile Include="CargosTests\CargoTests.cs" />
+    <Compile Include="CargosTests\FactoriesTests\CargoCreatorTests.cs" />
     <Compile Include="FileProcessorTests\CargoTypesXmlTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

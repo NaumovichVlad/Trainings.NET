@@ -7,7 +7,7 @@ using System.IO;
 using System.Xml;
 using ExceptionsLib;
 
-namespace CarFleetTestsLib.FileProcessorTests
+namespace CarFleetLibTests.FileProcessorTests
 {
     [TestClass]
     public class CargoTypesXmlTests : Connection

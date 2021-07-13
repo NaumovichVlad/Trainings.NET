@@ -12,4 +12,18 @@ namespace CarFleet
         Products,
         Materials
     }
+
+    public enum ConcreteCargo 
+    {
+        Brick,
+        Board,
+        Glass,
+        Milk,
+        Chease,  
+        Meat,
+        Petrol,
+        Diesel,
+        Gas
+
+    }
 }
