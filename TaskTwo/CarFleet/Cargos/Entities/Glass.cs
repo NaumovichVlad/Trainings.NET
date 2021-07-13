@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarFleet.Cargos.Entities
 {
-    public class Glass : Materials
+    public class Glass : MaterialCargo
     {
         public Glass(int cargoId, double weight, double volume,
             double optimalStorageTemperature, bool isLiquid)

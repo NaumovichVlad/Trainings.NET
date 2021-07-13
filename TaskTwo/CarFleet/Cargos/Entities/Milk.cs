@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarFleet.Cargos.Entities
 {
-    public class Milk : Products
+    public class Milk : ProductCargo
     {
         public Milk(int cargoId, double weight, double volume,
             double optimalStorageTemperature, bool isLiquid)

@@ -8,7 +8,7 @@
     <ProjectGuid>{D7F4E9A7-F8FB-4BE3-A13B-3D68C1384977}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CarFleetTestsLib</RootNamespace>
+    <RootNamespace>CarFleetLibTests</RootNamespace>
     <AssemblyName>CarFleetTestsLib</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CargosTests\CargoTests.cs" />
+    <Compile Include="CargosTests\FactoriesTests\CargoCategoryCreatorTests.cs" />
     <Compile Include="CargosTests\FactoriesTests\CargoCreatorTests.cs" />
     <Compile Include="FileProcessorTests\CargoTypesXmlTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +68,9 @@
       <Project>{8c5a9c0b-2f43-460f-b2ba-2464c97ca10f}</Project>
       <Name>ExceptionsLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\CargoCategoriesForTests.xml" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

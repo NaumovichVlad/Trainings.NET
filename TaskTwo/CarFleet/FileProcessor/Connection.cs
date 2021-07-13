@@ -10,13 +10,13 @@ namespace CarFleet.FileProcessor
     {
         private string connectionString = "../../../Data/";
 
-        protected string GetCargoTypesConnection()
+        protected string GetCargoCategoriesConnection()
         {
-            return connectionString + "cargoTypes.xml";
+            return connectionString + "cargoCategories.xml";
         }
-        protected string GetCargoTypesSchemaConnection()
+        protected string GetCargoCategoriesSchemaConnection()
         {
-            return connectionString + "cargoTypesSchema.xsd";
+            return connectionString + "cargoCategoriesSchema.xsd";
         }
     }
 }

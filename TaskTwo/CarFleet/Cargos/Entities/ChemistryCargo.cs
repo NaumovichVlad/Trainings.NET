@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace CarFleet.Cargos.Entities
 {
-    public abstract class Materials : Cargo
+    abstract public class ChemistryCargo : Cargo
     {
-        public Materials(int cargoId, double weight, double volume, bool isLiquid)
+        public ChemistryCargo(int cargoId, double weight, double volume, bool isLiquid)
                 : base(cargoId, weight, volume, isLiquid)
         { }
 
-        public Materials(int cargoId, double weight, double volume, double optimalStorageTemperature, bool isLiquid)
+        public ChemistryCargo(int cargoId, double weight, double volume, double optimalStorageTemperature, bool isLiquid)
             : base(cargoId, weight, volume, optimalStorageTemperature, isLiquid)
         { }
 
         public override CargoCategories GetCargoCategory()
         {
-            return CargoCategories.Materials;
+            return CargoCategories.Chemistry;
         }
     }
 }

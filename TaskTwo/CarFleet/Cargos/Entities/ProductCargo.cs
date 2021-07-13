@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CarFleet.Cargos.Entities
 {
-    abstract public class Products : Cargo
+    abstract public class ProductCargo : Cargo
     {
-        public Products(int cargoId, double weight, double volume, bool isLiquid)
+        public ProductCargo(int cargoId, double weight, double volume, bool isLiquid)
                 : base(cargoId, weight, volume, isLiquid)
         { }
 
-        public Products(int cargoId, double weight, double volume, double optimalStorageTemperature, bool isLiquid)
+        public ProductCargo(int cargoId, double weight, double volume, double optimalStorageTemperature, bool isLiquid)
             : base(cargoId, weight, volume, optimalStorageTemperature, isLiquid)
         { }
 

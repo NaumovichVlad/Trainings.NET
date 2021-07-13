@@ -1,6 +1,6 @@
 ﻿namespace CarFleet.Cargos.Entities
 {
-    public class Board : Materials
+    public class Board : MaterialCargo
     {
         public Board(int cargoId, double weight, double volume,
             double optimalStorageTemperature, bool isLiquid)

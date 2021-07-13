@@ -8,28 +8,30 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Schema;
 using ExceptionsLib;
+using CarFleet.Cargos.Categories;
+using CarFleet.Cargos.Factories;
 
 namespace CarFleet.FileProcessor
 {
-    public class CargoTypesXml : Connection, IRepository<ICargoType>
+    public class CargoCategoriesXml : Connection, IRepository<ICargoCategory>
     {
-        public void Save(List<ICargoType> cargoTypes)
+        public void Save(List<ICargoCategory> cargoTypes)
         {
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
             settings.NewLineOnAttributes = true;
-            using (XmlWriter xmlWriter = XmlWriter.Create(GetCargoTypesConnection(), settings))
+            using (XmlWriter xmlWriter = XmlWriter.Create(GetCargoCategoriesConnection(), settings))
             {
                 xmlWriter.WriteStartDocument();
-                xmlWriter.WriteStartElement("cargoTypes");
+                xmlWriter.WriteStartElement("cargoCategories");
                 foreach (var cargoType in cargoTypes)
                 {
-                    xmlWriter.WriteStartElement("cargoType");
-                    xmlWriter.WriteStartElement("typeId");
-                    xmlWriter.WriteString(cargoType.TypeId.ToString());
+                    xmlWriter.WriteStartElement("cargoCategory");
+                    xmlWriter.WriteStartElement("categoryId");
+                    xmlWriter.WriteString(cargoType.CategoryId.ToString());
                     xmlWriter.WriteEndElement();
-                    xmlWriter.WriteStartElement("typeName");
-                    xmlWriter.WriteString(cargoType.TypeName);
+                    xmlWriter.WriteStartElement("categoryName");
+                    xmlWriter.WriteString(cargoType.GetName().ToString());
                     xmlWriter.WriteEndElement();
                     xmlWriter.WriteEndElement();
                 }
@@ -38,37 +40,38 @@ namespace CarFleet.FileProcessor
             }
         }
 
-        public List<ICargoType> Load()
+        public List<ICargoCategory> Load()
         {
-            var cargoTypes = new List<ICargoType>();
+            var cargoCategories = new List<ICargoCategory>();
             XmlReaderSettings settings = new XmlReaderSettings();
-            settings.Schemas.Add(null, GetCargoTypesSchemaConnection());
+            settings.Schemas.Add(null, GetCargoCategoriesSchemaConnection());
             settings.ValidationType = ValidationType.Schema;
             settings.ValidationEventHandler += new ValidationEventHandler(CargoTypesValidationEventHandler);
-            using (XmlReader reader = XmlReader.Create(GetCargoTypesConnection(), settings))
+            using (XmlReader reader = XmlReader.Create(GetCargoCategoriesConnection(), settings))
             {
                 var id = 0;
-                var typeName = string.Empty;
+                var categoryName = string.Empty;
                 while (reader.Read())
                 {
                     if (reader.NodeType == XmlNodeType.Element)
                     {
                         switch (reader.Name)
                         {
-                            case "typeId":
+                            case "categoryId":
                                 reader.Read();
                                 id = Convert.ToInt32(reader.Value);
                                 break;
-                            case "typeName":
+                            case "categoryName":
                                 reader.Read();
-                                typeName = Convert.ToString(reader.Value);
-                                cargoTypes.Add(new CargoType(id, typeName));
+                                categoryName = Convert.ToString(reader.Value);
+                                var creator = new CargoCategoryCreator();
+                                cargoCategories.Add(creator.CreateCategory(categoryName, id));
                                 break;
                         }
                     }
                 }
             }
-            return cargoTypes;
+            return cargoCategories;
         }
 
         private void CargoTypesValidationEventHandler(object sender, ValidationEventArgs e)

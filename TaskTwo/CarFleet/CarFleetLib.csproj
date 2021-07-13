@@ -44,16 +44,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cargos\Categories\CargoCategory.cs" />
+    <Compile Include="Cargos\Categories\Chemistry.cs" />
+    <Compile Include="Cargos\Categories\ICargoCategory.cs" />
+    <Compile Include="Cargos\Categories\Materials.cs" />
+    <Compile Include="Cargos\Categories\Products.cs" />
     <Compile Include="Cargos\Entities\Board.cs" />
     <Compile Include="Cargos\Entities\Chease.cs" />
     <Compile Include="Cargos\Entities\Brick.cs" />
     <Compile Include="Cargos\Entities\Cargo.cs" />
-    <Compile Include="Cargos\CargoType.cs" />
-    <Compile Include="Cargos\Entities\Chemistry.cs" />
+    <Compile Include="Cargos\Entities\ChemistryCargo.cs" />
     <Compile Include="Cargos\Entities\Diesel.cs" />
+    <Compile Include="Cargos\Factories\CargoCategoryCreator.cs" />
     <Compile Include="Cargos\Factories\CargoCreator.cs" />
     <Compile Include="Cargos\Factories\ChemistryCargoCreator.cs" />
     <Compile Include="Cargos\Factories\ConcreteCargoCreator.cs" />
+    <Compile Include="Cargos\Factories\ICargoCategoryCreator.cs" />
     <Compile Include="Cargos\Factories\ICargoCreator.cs" />
     <Compile Include="Cargos\Factories\MaterialsCargoCreator.cs" />
     <Compile Include="Cargos\Entities\Gas.cs" />
@@ -61,14 +67,13 @@
     <Compile Include="Cargos\Entities\Petrol.cs" />
     <Compile Include="Cargos\Factories\ProductsCargoCreator.cs" />
     <Compile Include="Cargos\Entities\ICargo.cs" />
-    <Compile Include="Cargos\ICargoType.cs" />
-    <Compile Include="Cargos\Entities\Materials.cs" />
+    <Compile Include="Cargos\Entities\MaterialCargo.cs" />
     <Compile Include="Cargos\Entities\Meat.cs" />
     <Compile Include="Cargos\Entities\Milk.cs" />
-    <Compile Include="Cargos\Entities\Products.cs" />
+    <Compile Include="Cargos\Entities\ProductCargo.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="FileProcessor\CargosXml.cs" />
-    <Compile Include="FileProcessor\CargoTypesXml.cs" />
+    <Compile Include="FileProcessor\CargoCategoriesXml.cs" />
     <Compile Include="FileProcessor\Connection.cs" />
     <Compile Include="FileProcessor\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

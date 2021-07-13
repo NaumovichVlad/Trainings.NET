@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cargoCategories>
+  <cargoCategory>
+    <typeIdddd>1</typeIdddd>
+    <categoryName>SomeType</categoryName>
+  </cargoCategory>
+</cargoCategories>

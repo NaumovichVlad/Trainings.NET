@@ -5,7 +5,7 @@ using System;
 using ExceptionsLib;
 using CarFleet.Cargos.Entities;
 
-namespace CarFleetTestsLib.CargosTests.FactoriesTests
+namespace CarFleetLibTests.CargosTests.FactoriesTests
 {
     [TestClass]
     public class CargoCreatorTests

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 using ExceptionsLib;
+using CarFleet.Cargos.Categories;
 
 namespace CarFleetLibTests.FileProcessorTests
 {
@@ -13,24 +14,63 @@ namespace CarFleetLibTests.FileProcessorTests
     public class CargoTypesXmlTests : Connection
     {
         [TestMethod]
+        public void Save_TestOne()
+        {
+            var cargoTypes = new List<ICargoCategory>();
+            cargoTypes.Add(new Chemistry(1));
+            IRepository<ICargoCategory> cargoTypesXml = new CargoCategoriesXml();
+            cargoTypesXml.Save(cargoTypes);
+            string expected, actual;
+            using (StreamReader sr = new StreamReader(GetCargoCategoriesConnection()))
+            {
+                actual = sr.ReadToEnd();
+            }
+            using (StreamReader sr = new StreamReader("../../Data/CargoCategoriesForTests.xml"))
+            {
+                expected = sr.ReadToEnd();
+            }
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+
+        public void Load_TestOne()
+        {
+            var expectedCargoTypes = new List<ICargoCategory>();
+            expectedCargoTypes.Add(new Chemistry(1));
+            expectedCargoTypes.Add(new Products(2));
+            expectedCargoTypes.Add(new Materials(3));
+            IRepository<ICargoCategory> cargoTypesXml = new CargoCategoriesXml();
+            cargoTypesXml.Save(expectedCargoTypes);
+            var actualCargoTypes = cargoTypesXml.Load();
+            
+            Assert.AreEqual(expectedCargoTypes.Count, actualCargoTypes.Count);
+            for (var i = 0; i < expectedCargoTypes.Count; i++)
+                Assert.AreEqual(expectedCargoTypes[i], actualCargoTypes[i]);
+        }
+
+        [TestMethod]
         public void SchemaValidation_TestOne()
         {
-            using (XmlWriter xmlWriter = XmlWriter.Create(GetCargoTypesConnection()))
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.NewLineOnAttributes = true;
+            using (XmlWriter xmlWriter = XmlWriter.Create(GetCargoCategoriesConnection(), settings))
             {
                 xmlWriter.WriteStartDocument();
-                xmlWriter.WriteStartElement("cargoTypes");
-                xmlWriter.WriteStartElement("cargoType");
+                xmlWriter.WriteStartElement("cargoCategories");
+                xmlWriter.WriteStartElement("cargoCategory");
                 xmlWriter.WriteStartElement("typeIdddd");
                 xmlWriter.WriteString("1");
                 xmlWriter.WriteEndElement();
-                xmlWriter.WriteStartElement("typeName");
+                xmlWriter.WriteStartElement("categoryName");
                 xmlWriter.WriteString("SomeType");
                 xmlWriter.WriteEndElement();
                 xmlWriter.WriteEndElement();
                 xmlWriter.WriteEndElement();
                 xmlWriter.WriteEndDocument();
             }
-            IRepository<ICargoType> cargoTypesXml = new CargoTypesXml();
+            IRepository<ICargoCategory> cargoTypesXml = new CargoCategoriesXml();
             var exceptionFlag = false;
             try
             {
@@ -39,33 +79,15 @@ namespace CarFleetLibTests.FileProcessorTests
             catch (SchemaValidationException ex)
             {
                 exceptionFlag = true;
-                var expected = "Элемент \"cargoType\" имеет недопустимый дочерний элемент \"typeIdddd\". " +
-                    "Список ожидаемых элементов: \"typeId\".";
+                var expected = "Элемент \"cargoCategory\" имеет недопустимый дочерний элемент \"typeIdddd\". " +
+                    "Список ожидаемых элементов: \"categoryId\".";
                 var actual = ex.Message;
                 Assert.AreEqual(expected, actual);
             }
             finally
             {
                 Assert.AreEqual(true, exceptionFlag);
-            }
-            
-        }
-
-        [TestMethod]
-
-        public void Load_TestOne()
-        {
-            var expectedCargoTypes = new List<ICargoType>();
-            expectedCargoTypes.Add(new CargoType(1, "Chemistry"));
-            expectedCargoTypes.Add(new CargoType(2, "Products"));
-            expectedCargoTypes.Add(new CargoType(3, "Materials"));
-            IRepository<ICargoType> cargoTypesXml = new CargoTypesXml();
-            cargoTypesXml.Save(expectedCargoTypes);
-            var actualCargoTypes = cargoTypesXml.Load();
-            
-            Assert.AreEqual(expectedCargoTypes.Count, actualCargoTypes.Count);
-            for (var i = 0; i < expectedCargoTypes.Count; i++)
-                Assert.AreEqual(expectedCargoTypes[i], actualCargoTypes[i]);
+            } 
         }
     }
 }
