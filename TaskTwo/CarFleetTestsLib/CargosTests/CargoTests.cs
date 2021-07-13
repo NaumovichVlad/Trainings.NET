@@ -1,5 +1,5 @@
-﻿using CarFleet.Cargos;
-using CarFleet.Cargos.Entities;
+﻿using CarFleetLib.Cargos;
+using CarFleetLib.Cargos.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 

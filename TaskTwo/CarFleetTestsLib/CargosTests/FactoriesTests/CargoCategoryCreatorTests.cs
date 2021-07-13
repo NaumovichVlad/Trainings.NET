@@ -1,5 +1,5 @@
-﻿using CarFleet.Cargos.Categories;
-using CarFleet.Cargos.Factories;
+﻿using CarFleetLib.Cargos.Categories;
+using CarFleetLib.Cargos.Factories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CarFleetLibTests.CargosTests.FactoriesTests

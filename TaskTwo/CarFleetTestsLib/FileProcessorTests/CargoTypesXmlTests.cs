@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CarFleet.FileProcessor;
-using CarFleet.Cargos;
+using CarFleetLib.FileProcessor;
+using CarFleetLib.Cargos;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 using ExceptionsLib;
-using CarFleet.Cargos.Categories;
+using CarFleetLib.Cargos.Categories;
 
 namespace CarFleetLibTests.FileProcessorTests
 {

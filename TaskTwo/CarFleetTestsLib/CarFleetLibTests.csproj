@@ -60,8 +60,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CarFleet\CarFleetLib.csproj">
-      <Project>{F9BD8DFD-66A0-4BB2-A694-4C6335900CFB}</Project>
+    <ProjectReference Include="..\CarFleetLib\CarFleetLib.csproj">
+      <Project>{f9bd8dfd-66a0-4bb2-a694-4c6335900cfb}</Project>
       <Name>CarFleetLib</Name>
     </ProjectReference>
     <ProjectReference Include="..\ExceptionsLib\ExceptionsLib.csproj">

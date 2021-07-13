@@ -1,9 +1,9 @@
-﻿using CarFleet.Cargos;
-using CarFleet.Cargos.Factories;
+﻿using CarFleetLib.Cargos;
+using CarFleetLib.Cargos.Factories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using ExceptionsLib;
-using CarFleet.Cargos.Entities;
+using CarFleetLib.Cargos.Entities;
 
 namespace CarFleetLibTests.CargosTests.FactoriesTests
 {

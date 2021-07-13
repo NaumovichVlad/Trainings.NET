@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CarFleetLib.Cargos.Entities
+{
+    public class Petrol : ChemistryCargo
+    {
+        public Petrol(int cargoId, double weight, double volume,
+            double optimalStorageTemperature, bool isLiquid)
+            : base(cargoId, weight, volume, optimalStorageTemperature, isLiquid)
+        { }
+
+        public override ConcreteCargo GetCargoType()
+        {
+            return ConcreteCargo.Petrol;
+        }
+    }
+}
