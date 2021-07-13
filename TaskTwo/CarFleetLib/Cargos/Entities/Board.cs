@@ -7,9 +7,9 @@
             : base(cargoId, weight, volume, optimalStorageTemperature, isLiquid)
         { }
 
-        public override ConcreteCargo GetCargoType()
+        public override CargoTypes GetCargoType()
         {
-            return ConcreteCargo.Board;
+            return CargoTypes.Board;
         }
     }
 }

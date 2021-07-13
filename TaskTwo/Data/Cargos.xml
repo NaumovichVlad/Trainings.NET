@@ -2,6 +2,20 @@
 <cargos>
   <cargo>
     <cargoId>1</cargoId>
-    <cargoName>SomeType</cargoName>
+    <cargoType>Milk</cargoType>
+    <cargoCategoryId>1</cargoCategoryId>
+    <weight>100</weight>
+    <volume>10.1</volume>
+    <optimalStorageTemperature>2</optimalStorageTemperature>
+    <isLiquid>false</isLiquid>
+  </cargo>
+  <cargo>
+    <cargoId>3</cargoId>
+    <cargoType>Petrol</cargoType>
+    <cargoCategoryId>2</cargoCategoryId>
+    <weight>110.5</weight>
+    <volume>12</volume>
+    <optimalStorageTemperature></optimalStorageTemperature>
+    <isLiquid>false</isLiquid>
   </cargo>
 </cargos>

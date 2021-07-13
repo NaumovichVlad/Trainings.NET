@@ -35,7 +35,7 @@ namespace CarFleetLib.Cargos.Entities
             IsLiquid = isLiquid;
         }
 
-        abstract public ConcreteCargo GetCargoType();
+        abstract public CargoTypes GetCargoType();
         abstract public CargoCategories GetCargoCategory();
 
         public override bool Equals(object obj)

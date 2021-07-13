@@ -7,9 +7,9 @@
             : base(cargoId, weight, volume, isLiquid)
         { }
 
-        public override ConcreteCargo GetCargoType()
+        public override CargoTypes GetCargoType()
         {
-            return ConcreteCargo.Brick;
+            return CargoTypes.Brick;
         }
     }
 }

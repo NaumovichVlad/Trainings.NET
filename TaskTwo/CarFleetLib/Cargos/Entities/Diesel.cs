@@ -13,9 +13,9 @@ namespace CarFleetLib.Cargos.Entities
             : base(cargoId, weight, volume, optimalStorageTemperature, isLiquid)
         { }
 
-        public override ConcreteCargo GetCargoType()
+        public override CargoTypes GetCargoType()
         {
-            return ConcreteCargo.Diesel;
+            return CargoTypes.Diesel;
         }
     }
 }

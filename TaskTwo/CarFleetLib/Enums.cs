@@ -13,7 +13,7 @@ namespace CarFleetLib
         Materials
     }
 
-    public enum ConcreteCargo 
+    public enum CargoTypes 
     {
         Brick,
         Board,

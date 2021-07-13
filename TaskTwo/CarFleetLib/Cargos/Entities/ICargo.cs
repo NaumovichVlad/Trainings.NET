@@ -15,7 +15,7 @@ namespace CarFleetLib.Cargos.Entities
         bool IsPerishable { get; }
         bool IsLiquid { get;}
 
-        ConcreteCargo GetCargoType();
+        CargoTypes GetCargoType();
         CargoCategories GetCargoCategory();
     }
 }

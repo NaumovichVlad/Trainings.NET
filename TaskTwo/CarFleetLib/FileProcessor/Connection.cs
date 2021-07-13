@@ -18,5 +18,13 @@ namespace CarFleetLib.FileProcessor
         {
             return connectionString + "cargoCategoriesSchema.xsd";
         }
+        protected string GetCargosConnection()
+        {
+            return connectionString + "cargos.xml";
+        }
+        protected string GetCargosSchemaConnection()
+        {
+            return connectionString + "cargosSchema.xsd";
+        }
     }
 }

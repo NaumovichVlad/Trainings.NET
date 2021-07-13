@@ -29,19 +29,19 @@ namespace CarFleetLib.Cargos.Factories
         }
         public override ICargo CreateCargo()
         {
-            ConcreteCargo cargoType;
+            CargoTypes cargoType;
             ICargo cargo = null;
             if(!Enum.TryParse(type, out cargoType))
                 throw new ObjectExistenceException();
             switch (cargoType)
             {
-                case ConcreteCargo.Chease:
+                case CargoTypes.Chease:
                     cargo = new Chease(id, weight, volume, optimalStorageTemperature, isLiquid);
                     break;
-                case ConcreteCargo.Meat:
+                case CargoTypes.Meat:
                     cargo = new Meat(id, weight, volume, optimalStorageTemperature, isLiquid);
                     break;
-                case ConcreteCargo.Milk:
+                case CargoTypes.Milk:
                     cargo = new Milk(id, weight, volume, optimalStorageTemperature, isLiquid);
                     break;
                 default:
