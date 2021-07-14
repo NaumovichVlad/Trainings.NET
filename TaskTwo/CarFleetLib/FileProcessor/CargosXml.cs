@@ -1,6 +1,7 @@
 ﻿using CarFleetLib.Cargos;
 using CarFleetLib.Cargos.Categories;
 using CarFleetLib.Cargos.Entities;
+using CarFleetLib.Cargos.Factories;
 using ExceptionsLib;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace CarFleetLib.FileProcessor
                     xmlWriter.WriteString(cargo.GetCargoType().ToString());
                     xmlWriter.WriteEndElement();
                     xmlWriter.WriteStartElement("cargoCategoryId");
-                    xmlWriter.WriteString(cargo.GetCargoCategory().ToString());
+                    xmlWriter.WriteString(GetCategoryIdByName(cargo.GetCargoCategory()).ToString());
                     xmlWriter.WriteEndElement();
                     xmlWriter.WriteStartElement("weight");
                     xmlWriter.WriteString(cargo.Weight.ToString());
@@ -65,38 +66,80 @@ namespace CarFleetLib.FileProcessor
         public List<ICargo> Load()
         {
             var cargos = new List<ICargo>();
-            // В разработочке
-            /* 
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.Schemas.Add(null, GetCargosSchemaConnection());
             settings.ValidationType = ValidationType.Schema;
             settings.ValidationEventHandler += new ValidationEventHandler(CargosValidationEventHandler);
             using (XmlReader reader = XmlReader.Create(GetCargosConnection(), settings))
             {
-                var id = 0;
-                var categoryName = string.Empty;
+                var cargoId = 0;
+                var categoryId = 0;
+                var cargoType = string.Empty;
+                double weight = 0;
+                double volume = 0;
+                double optimalStorageTemperature = 0;
+                bool isLiquid = false;
+
                 while (reader.Read())
                 {
                     if (reader.NodeType == XmlNodeType.Element)
                     {
                         switch (reader.Name)
                         {
-                            case "categoryId":
+                            case "cargoId":
                                 reader.Read();
-                                id = Convert.ToInt32(reader.Value);
+                                cargoId = Convert.ToInt32(reader.Value);
                                 break;
-                            case "categoryName":
+                            case "cargoType":
                                 reader.Read();
-                                categoryName = Convert.ToString(reader.Value);
-                                var creator = new CargoCategoryCreator();
-                                cargos.Add(creator.CreateCategory(categoryName, id));
+                                cargoType = Convert.ToString(reader.Value);
+                                break;
+                            case "cargoCategoryId":
+                                reader.Read();
+                                categoryId = Convert.ToInt32(reader.Value);
+                                break;
+                            case "weight":
+                                reader.Read();
+                                weight = Convert.ToDouble(reader.Value);
+                                break;
+                            case "volume":
+                                reader.Read();
+                                volume = Convert.ToDouble(reader.Value);
+                                break;
+                            case "optimalStorageTemperature":
+                                reader.Read();
+                                optimalStorageTemperature = Convert.ToDouble(reader.Value);
+                                break;
+                            case "isLiquid":
+                                reader.Read();
+                                isLiquid = Convert.ToBoolean(reader.Value);
+                                var category = GetCategoryById(categoryId);
+                                var categoryCreator = new CargoCategoryCreator();
+                                var cargoCreator = new ConcreteCargoCreator(cargoId, weight, volume,
+                                    category.GetName().ToString(), cargoType, optimalStorageTemperature, isLiquid);
+                                cargos.Add(cargoCreator.CreateCargo());
                                 break;
                         }
                     }
                 }
             }
-            */
             return cargos;
+        }
+
+        private ICargoCategory GetCategoryById(int categoryId)
+        {
+            IRepository<ICargoCategory> categoryReader = new CargoCategoriesXml();
+            var categories = categoryReader.Load();
+            var category = categories.Find(c => c.CategoryId == categoryId);
+            return category;
+        }
+
+        private int GetCategoryIdByName(CargoCategories categoryName)
+        {
+            IRepository<ICargoCategory> categoryReader = new CargoCategoriesXml();
+            var categories = categoryReader.Load();
+            var category = categories.Find(c => c.GetName() == categoryName);
+            return category.CategoryId;
         }
 
         private void CargosValidationEventHandler(object sender, ValidationEventArgs e)

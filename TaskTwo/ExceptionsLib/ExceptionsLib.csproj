@@ -44,6 +44,7 @@
     <Compile Include="ObjectExistenceException.cs" />
     <Compile Include="SchemaValidationException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrailerOverflowException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

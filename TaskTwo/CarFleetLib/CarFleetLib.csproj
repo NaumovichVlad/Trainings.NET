@@ -77,6 +77,8 @@
     <Compile Include="FileProcessor\Connection.cs" />
     <Compile Include="FileProcessor\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trailers\ITrailer.cs" />
+    <Compile Include="Trailers\Trailer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

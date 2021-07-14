@@ -53,7 +53,9 @@
     <Compile Include="CargosTests\CargoTests.cs" />
     <Compile Include="CargosTests\FactoriesTests\CargoCategoryCreatorTests.cs" />
     <Compile Include="CargosTests\FactoriesTests\CargoCreatorTests.cs" />
-    <Compile Include="FileProcessorTests\CargoTypesXmlTests.cs" />
+    <Compile Include="FileProcessorTests\CargosXmlTests.cs" />
+    <Compile Include="FileProcessorTests\CargoCategoriesXmlTests.cs" />
+    <Compile Include="FillerForTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\CargoCategoriesForTests.xml" />
+    <Content Include="Data\CargosForTests.xml" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

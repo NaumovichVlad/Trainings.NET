@@ -11,7 +11,7 @@ using CarFleetLib.Cargos.Categories;
 namespace CarFleetLibTests.FileProcessorTests
 {
     [TestClass]
-    public class CargoTypesXmlTests : Connection
+    public class CargoCategoriesXmlTests : Connection
     {
         [TestMethod]
         public void Save_TestOne()
