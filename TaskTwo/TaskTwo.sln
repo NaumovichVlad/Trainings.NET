@@ -7,10 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarFleetLibTests", "CarFlee
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F0EE06FB-3669-40CD-95E1-9A51213BFEE2}"
 	ProjectSection(SolutionItems) = preProject
-		Data\CargoCategories.xml = Data\CargoCategories.xml
-		Data\CargoCategoriesSchema.xsd = Data\CargoCategoriesSchema.xsd
-		Data\Cargos.xml = Data\Cargos.xml
-		Data\CargosSchema.xsd = Data\CargosSchema.xsd
+		Data\cargoCategories.xml = Data\cargoCategories.xml
+		Data\cargoCategoriesSchema.xsd = Data\cargoCategoriesSchema.xsd
+		Data\cargos.xml = Data\cargos.xml
+		Data\cargosSchema.xsd = Data\cargosSchema.xsd
+		Data\trailerCategories.xml = Data\trailerCategories.xml
+		Data\trailerCategoriesSchema.xsd = Data\trailerCategoriesSchema.xsd
+		Data\trailers.xml = Data\trailers.xml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionsLib", "ExceptionsLib\ExceptionsLib.csproj", "{8C5A9C0B-2F43-460F-B2BA-2464C97CA10F}"

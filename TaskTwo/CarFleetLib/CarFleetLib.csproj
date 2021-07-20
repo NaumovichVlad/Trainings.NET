@@ -76,9 +76,23 @@
     <Compile Include="FileProcessor\CargoCategoriesXml.cs" />
     <Compile Include="FileProcessor\Connection.cs" />
     <Compile Include="FileProcessor\IRepository.cs" />
+    <Compile Include="FileProcessor\TrailerCategoriesXml.cs" />
+    <Compile Include="Logistic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Trailers\ITrailer.cs" />
-    <Compile Include="Trailers\Trailer.cs" />
+    <Compile Include="Trailers\Categories\Awning.cs" />
+    <Compile Include="Trailers\Categories\ITrailerCategory.cs" />
+    <Compile Include="Trailers\Categories\Refrigerator.cs" />
+    <Compile Include="Trailers\Categories\Tanker.cs" />
+    <Compile Include="Trailers\Categories\TrailerCategory.cs" />
+    <Compile Include="Trailers\Entities\AwningTrailer.cs" />
+    <Compile Include="Trailers\Entities\IFrozen.cs" />
+    <Compile Include="Trailers\Entities\ITrailer.cs" />
+    <Compile Include="Trailers\Entities\RefrigeratorTrailer.cs" />
+    <Compile Include="Trailers\Entities\TankerTrailer.cs" />
+    <Compile Include="Trailers\Entities\Trailer.cs" />
+    <Compile Include="Trailers\Factories\ITrailerCategoryCreator.cs" />
+    <Compile Include="Trailers\Factories\TrailerCategoryCreator.cs" />
+    <Compile Include="Trucks\ITruck.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

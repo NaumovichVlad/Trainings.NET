@@ -26,4 +26,11 @@ namespace CarFleetLib
         Gas
 
     }
+
+    public enum TrailerCategories
+    {
+        Tanker,
+        Refrigerator,
+        Awning
+    }
 }

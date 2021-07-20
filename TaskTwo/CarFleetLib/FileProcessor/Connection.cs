@@ -26,5 +26,13 @@ namespace CarFleetLib.FileProcessor
         {
             return connectionString + "cargosSchema.xsd";
         }
+        protected string GetTrailerCategoriesConnection()
+        {
+            return connectionString + "trailerCategories.xml";
+        }
+        protected string GetTrailerCategoriesSchemaConnection()
+        {
+            return connectionString + "trailerCategoriesSchema.xsd";
+        }
     }
 }

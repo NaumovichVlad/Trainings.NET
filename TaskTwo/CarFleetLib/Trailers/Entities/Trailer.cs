@@ -6,17 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 using ExceptionsLib;
 
-namespace CarFleetLib.Trailers
+namespace CarFleetLib.Trailers.Entities
 {
     abstract public class Trailer : ITrailer
     {
         private List<ICargo> cargos = null;
-
         public int TrailerId { get; set; }
         public double LoadСapacity { get; set; }
         public double Volume { get; set; }
         public double OwnWeight { get; }
-        public double WeightWithLoad { get { return GetWeightWithLoad(); } }
+        public double CargoWeight => CalculateTotalCargoWeight();
+        public double CargoVolume => CalculateTotalCargoVolume();
 
         public Trailer(int id, double loadCapacity, double volume, double ownWeight)
         {
@@ -24,12 +24,6 @@ namespace CarFleetLib.Trailers
             LoadСapacity = loadCapacity;
             Volume = volume;
             OwnWeight = ownWeight;
-        }
-
-        private double GetWeightWithLoad()
-        {
-            var weight = CalculateTotalCargoWeight() + OwnWeight;
-            return weight;
         }
 
         public void LoadCargo(List<ICargo> cargosForLoad)
@@ -68,5 +62,7 @@ namespace CarFleetLib.Trailers
             cargos = null;
             return unloadedCargo;
         }
+
+        abstract public TrailerCategories GetTrailerType();
     }
 }
