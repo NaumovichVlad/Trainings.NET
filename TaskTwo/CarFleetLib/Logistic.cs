@@ -1,7 +1,7 @@
 ﻿using CarFleetLib.Cargos.Entities;
 using CarFleetLib.FileProcessor;
 using CarFleetLib.Trailers.Entities;
-using CarFleetLib.Trucks;
+using CarFleetLib.Trucks.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

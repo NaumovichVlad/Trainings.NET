@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trailers></trailers>
+<trailers>
+  <trailer>
+    <trailerId>1</trailerId>
+    <loadCapacity>200,4</loadCapacity>
+    <volume>200,3</volume>
+    <trailerCategory>Awning</trailerCategory>
+    <ownWeight>2000,1</ownWeight>
+  </trailer>
+  <trailer>
+    <trailerId>1</trailerId>
+    <loadCapacity>100,1</loadCapacity>
+    <volume>213,2</volume>
+    <trailerCategory>Tanker</trailerCategory>
+    <ownWeight>2001,3</ownWeight>
+  </trailer>
+</trailers>

@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace CarFleetLib.Cargos.Entities
 {
-    public class Chease : ProductCargo
+    public class Cheese : ProductCargo
     {
-        public Chease(int cargoId, double weight, double volume,
+        public Cheese(int cargoId, double weight, double volume,
             double optimalStorageTemperature, bool isLiquid)
             : base(cargoId, weight, volume, optimalStorageTemperature, isLiquid)
         { }
 
         public override CargoTypes GetCargoType()
         {
-            return CargoTypes.Chease;
+            return CargoTypes.Cheese;
         }
     }
 }

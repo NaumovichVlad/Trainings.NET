@@ -35,8 +35,8 @@ namespace CarFleetLib.Cargos.Factories
                 throw new ObjectExistenceException();
             switch (cargoType)
             {
-                case CargoTypes.Chease:
-                    cargo = new Chease(id, weight, volume, optimalStorageTemperature, isLiquid);
+                case CargoTypes.Cheese:
+                    cargo = new Cheese(id, weight, volume, optimalStorageTemperature, isLiquid);
                     break;
                 case CargoTypes.Meat:
                     cargo = new Meat(id, weight, volume, optimalStorageTemperature, isLiquid);

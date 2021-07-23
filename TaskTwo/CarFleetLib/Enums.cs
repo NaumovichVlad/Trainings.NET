@@ -19,7 +19,7 @@ namespace CarFleetLib
         Board,
         Glass,
         Milk,
-        Chease,  
+        Cheese,  
         Meat,
         Petrol,
         Diesel,
@@ -32,5 +32,10 @@ namespace CarFleetLib
         Tanker,
         Refrigerator,
         Awning
+    }
+
+    public enum TruckCategories
+    {
+        TruckTractor
     }
 }
