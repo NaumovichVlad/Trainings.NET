@@ -1,5 +1,6 @@
 ﻿using CarFleetLib.Cargos.Entities;
 using ExceptionsLib;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,44 +11,35 @@ namespace CarFleetLib.Cargos.Factories
 {
     public class MaterialsCargoCreator : CargoCreator
     {
-        int id;
-        double weight, volume;
-        string type;
-        double optimalStorageTemperature;
-        bool isLiquid;
+        string type = string.Empty;
+        IKernel container = new StandardKernel(new ProductsCargoContainer());
 
-        public MaterialsCargoCreator(int id, double weight, double volume,
-            string type, double optimalStorageTemperature, bool isLiquid)
+        public MaterialsCargoCreator(string type)
         {
-            this.id = id;
-            this.weight = weight;
-            this.volume = volume;
             this.type = type;
-            this.optimalStorageTemperature = optimalStorageTemperature;
-            this.isLiquid = isLiquid;
-
         }
-        public override ICargo CreateCargo()
+        public override ICargo CreateCargo(int id, double weight, double volume,
+            double optimalStorageTemperature, bool isLiquid)
         {
             CargoTypes cargoType;
-            ICargo cargo = null;
-            if(!Enum.TryParse(type, out cargoType))
+            ICargoCreator cargoCreator;
+            if (!Enum.TryParse(type, out cargoType))
                 throw new ObjectExistenceException();
             switch (cargoType)
             {
                 case CargoTypes.Brick:
-                    cargo = new Brick(id, weight, volume, isLiquid);
+                    cargoCreator = container.Get<IBrickCreator>();
                     break;
                 case CargoTypes.Board:
-                    cargo = new Board(id, weight, volume, optimalStorageTemperature, isLiquid);
+                    cargoCreator = container.Get<IBoardCreator>();
                     break;
                 case CargoTypes.Glass:
-                    cargo = new Glass(id, weight, volume, optimalStorageTemperature, isLiquid);
+                    cargoCreator = container.Get<IGlassCreator>();
                     break;
                 default:
                     throw new ObjectExistenceException();
             }
-            return cargo;
+            return cargoCreator.CreateCargo(id, weight, volume, optimalStorageTemperature, isLiquid);
         }
     }
 }

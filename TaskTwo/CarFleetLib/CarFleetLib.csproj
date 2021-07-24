@@ -34,6 +34,9 @@
     <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,16 +58,37 @@
     <Compile Include="Cargos\Entities\Cargo.cs" />
     <Compile Include="Cargos\Entities\ChemistryCargo.cs" />
     <Compile Include="Cargos\Entities\Diesel.cs" />
+    <Compile Include="Cargos\Factories\BoardCreator.cs" />
+    <Compile Include="Cargos\Factories\BrickCreator.cs" />
     <Compile Include="Cargos\Factories\CargoCategoryCreator.cs" />
     <Compile Include="Cargos\Factories\CargoCreator.cs" />
+    <Compile Include="Cargos\Factories\CheeseCreator.cs" />
+    <Compile Include="Cargos\Factories\ChemistryCargoContainer.cs" />
     <Compile Include="Cargos\Factories\ChemistryCargoCreator.cs" />
+    <Compile Include="Cargos\Factories\DieselCreator.cs" />
+    <Compile Include="Cargos\Factories\GasCreator.cs" />
+    <Compile Include="Cargos\Factories\GlassCreator.cs" />
     <Compile Include="Cargos\Factories\ConcreteCargoCreator.cs" />
+    <Compile Include="Cargos\Factories\IBoardCreator.cs" />
+    <Compile Include="Cargos\Factories\IBrickCreator.cs" />
     <Compile Include="Cargos\Factories\ICargoCategoryCreator.cs" />
     <Compile Include="Cargos\Factories\ICargoCreator.cs" />
+    <Compile Include="Cargos\Factories\ICheeseCreator.cs" />
+    <Compile Include="Cargos\Factories\IDieselCreator.cs" />
+    <Compile Include="Cargos\Factories\IGasCreator.cs" />
+    <Compile Include="Cargos\Factories\IGlassCreator.cs" />
+    <Compile Include="Cargos\Factories\IMeatCreator.cs" />
+    <Compile Include="Cargos\Factories\IMilkCreator.cs" />
+    <Compile Include="Cargos\Factories\IPetrolCreator.cs" />
+    <Compile Include="Cargos\Factories\MaterialCargoContainer.cs" />
     <Compile Include="Cargos\Factories\MaterialsCargoCreator.cs" />
     <Compile Include="Cargos\Entities\Gas.cs" />
     <Compile Include="Cargos\Entities\Glass.cs" />
     <Compile Include="Cargos\Entities\Petrol.cs" />
+    <Compile Include="Cargos\Factories\MeatCreator.cs" />
+    <Compile Include="Cargos\Factories\MilkCreator.cs" />
+    <Compile Include="Cargos\Factories\PetrolCreator.cs" />
+    <Compile Include="Cargos\Factories\ProductsCargoContainer.cs" />
     <Compile Include="Cargos\Factories\ProductsCargoCreator.cs" />
     <Compile Include="Cargos\Entities\ICargo.cs" />
     <Compile Include="Cargos\Entities\MaterialCargo.cs" />

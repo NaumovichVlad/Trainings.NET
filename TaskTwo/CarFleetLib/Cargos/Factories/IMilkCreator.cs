@@ -7,9 +7,6 @@ using System.Threading.Tasks;
 
 namespace CarFleetLib.Cargos.Factories
 {
-    public interface ICargoCreator
-    {
-        ICargo CreateCargo(int id, double weight, double volume,
-           double optimalStorageTemperature, bool isLiquid);
-    }
+    public interface IMilkCreator : ICargoCreator
+    { }
 }

@@ -9,6 +9,7 @@ namespace CarFleetLib.Cargos.Factories
 {
     abstract public class CargoCreator : ICargoCreator
     {
-        abstract public ICargo CreateCargo();
+        abstract public ICargo CreateCargo(int id, double weight, double volume,
+            double optimalStorageTemperature, bool isLiquid);
     }
 }

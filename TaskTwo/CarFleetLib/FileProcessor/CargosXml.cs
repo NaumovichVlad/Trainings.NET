@@ -115,9 +115,9 @@ namespace CarFleetLib.FileProcessor
                                 isLiquid = Convert.ToBoolean(reader.Value);
                                 var category = GetCategoryById(categoryId);
                                 var categoryCreator = new CargoCategoryCreator();
-                                var cargoCreator = new ConcreteCargoCreator(cargoId, weight, volume,
-                                    category.GetName().ToString(), cargoType, optimalStorageTemperature, isLiquid);
-                                cargos.Add(cargoCreator.CreateCargo());
+                                var cargoCreator = new ConcreteCargoCreator(category.GetName().ToString(), cargoType);
+                                cargos.Add(cargoCreator.CreateCargo(cargoId, weight, volume,
+                                    optimalStorageTemperature, isLiquid));
                                 break;
                         }
                     }

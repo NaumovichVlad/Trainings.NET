@@ -10,23 +10,15 @@ namespace CarFleetLib.Cargos.Factories
 {
     public class ConcreteCargoCreator : CargoCreator
     {
-        int id;
-        double weight, volume, optimalStorageTemperature;
-        string category, type;
-        bool isLiquid;
-        public ConcreteCargoCreator (int id, double weight, double volume,
-            string category, string type, double optimalStorageTemperature, bool isLiquid)
+        string category = string.Empty;
+        string type = string.Empty;
+        public ConcreteCargoCreator(string category, string type)
         {
-            this.id = id;
-            this.weight = weight;
-            this.volume = volume;
-            this.optimalStorageTemperature = optimalStorageTemperature;
             this.category = category;
             this.type = type;
-            this.isLiquid = isLiquid;
         }
-
-        public override ICargo CreateCargo()
+        public override ICargo CreateCargo(int id, double weight, double volume,
+            double optimalStorageTemperature, bool isLiquid)
         {
             CargoCategories cargoCategory;
             ICargoCreator cargoCreator = null;
@@ -35,7 +27,7 @@ namespace CarFleetLib.Cargos.Factories
             switch (cargoCategory)
             {
                 case CargoCategories.Products:
-                    cargoCreator = new ProductsCargoCreator(id, weight, volume, type, optimalStorageTemperature, isLiquid);
+                    cargoCreator = new ProductsCargoCreator(type);
                     break;
                 case CargoCategories.Chemistry:
                     cargoCreator = new ChemistryCargoCreator(id, weight, volume, type, optimalStorageTemperature, isLiquid);
@@ -44,7 +36,7 @@ namespace CarFleetLib.Cargos.Factories
                     cargoCreator = new MaterialsCargoCreator(id, weight, volume, type, optimalStorageTemperature, isLiquid);
                     break;
             }
-            ICargo cargo = cargoCreator.CreateCargo();
+            ICargo cargo = cargoCreator.CreateCargo(id, weight, volume, optimalStorageTemperature, isLiquid);
             return cargo;
         }
     }

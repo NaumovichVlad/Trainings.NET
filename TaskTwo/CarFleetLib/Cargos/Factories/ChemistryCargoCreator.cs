@@ -1,5 +1,6 @@
 ﻿using CarFleetLib.Cargos.Entities;
 using ExceptionsLib;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,43 +11,35 @@ namespace CarFleetLib.Cargos.Factories
 {
     public class ChemistryCargoCreator : CargoCreator
     {
-        int id;
-        double weight, volume;
-        string type;
-        double optimalStorageTemperature;
-        bool isLiquid;
+        string type = string.Empty;
+        IKernel container = new StandardKernel(new ProductsCargoContainer());
 
-        public ChemistryCargoCreator(int id, double weight, double volume,
-            string type, double optimalStorageTemperature, bool isLiquid)
+        public ChemistryCargoCreator(string type)
         {
-            this.id = id;
-            this.weight = weight;
-            this.volume = volume;
             this.type = type;
-            this.optimalStorageTemperature = optimalStorageTemperature;
-            this.isLiquid = isLiquid;
-
         }
-        public override ICargo CreateCargo()
+        public override ICargo CreateCargo(int id, double weight, double volume,
+            double optimalStorageTemperature, bool isLiquid)
         {
             CargoTypes cargoType;
-            ICargo cargo = null;
-            if(!Enum.TryParse(type, out cargoType))
+            ICargoCreator cargoCreator;
+            if (!Enum.TryParse(type, out cargoType))
                 throw new ObjectExistenceException();
             switch (cargoType)
             {
                 case CargoTypes.Gas:
-                    cargo = new Gas(id, weight, volume, optimalStorageTemperature, isLiquid);
+                    cargoCreator = container.Get<IGasCreator>();
                     break;
                 case CargoTypes.Petrol:
-                    cargo = new Petrol(id, weight, volume, optimalStorageTemperature, isLiquid);
+                    cargoCreator = container.Get<IPetrolCreator>();
                     break;
                 case CargoTypes.Diesel:
-                    cargo = new Diesel(id, weight, volume, optimalStorageTemperature, isLiquid);
+                    cargoCreator = container.Get<IDieselCreator>();
                     break;
                 default:
                     throw new ObjectExistenceException();
             }
+            var cargo = cargoCreator.CreateCargo(id, weight, volume, optimalStorageTemperature, isLiquid);
             return cargo;
         }
     }
