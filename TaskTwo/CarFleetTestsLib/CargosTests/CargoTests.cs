@@ -11,8 +11,8 @@ namespace CarFleetLibTests.CargosTests
         [TestMethod]
         public void Equals_TestOne()
         {
-            ICargo brickOne = new Brick(1, 1.05, 1.02, false);
-            ICargo brickTwo = new Brick(1, 1.05, 1.02, false);
+            ICargo brickOne = new Brick(1, 1.05, 1.02, 0, false);
+            ICargo brickTwo = new Brick(1, 1.05, 1.02, 0, false);
             var actual = brickOne.Equals(brickTwo);
             var expected = true;
             Assert.AreEqual(expected, actual);
@@ -21,8 +21,8 @@ namespace CarFleetLibTests.CargosTests
         [TestMethod]
         public void Equals_TestTwo()
         {
-            ICargo brickOne = new Brick(1, 1.01, 1.02, true);
-            ICargo brickTwo = new Brick(1, 1.05, 1.02, false);
+            ICargo brickOne = new Brick(1, 1.01, 1.02, 0, true);
+            ICargo brickTwo = new Brick(1, 1.05, 1.02, 0, false);
             var actual = brickOne.Equals(brickTwo);
             var expected = false;
             Assert.AreEqual(expected, actual);

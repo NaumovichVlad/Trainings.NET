@@ -20,3 +20,5 @@ E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetLib\obj\Debug\CarFleetLib.c
 E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetLib\obj\Debug\CarFleetLib.csproj.CopyComplete
 E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetLib\obj\Debug\CarFleet.dll
 E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetLib\obj\Debug\CarFleet.pdb
+E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetLib\bin\Debug\Ninject.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetLib\bin\Debug\Ninject.xml

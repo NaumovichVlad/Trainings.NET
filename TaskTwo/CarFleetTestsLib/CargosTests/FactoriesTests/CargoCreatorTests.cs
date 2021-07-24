@@ -21,9 +21,8 @@ namespace CarFleetLibTests.CargosTests.FactoriesTests
             var category = "Products";
             var type = "Milk";
             var expected = new Milk(id, weight, volume, temperature, isLiquid);
-            ICargoCreator creator = new ConcreteCargoCreator(id, weight, volume, category,
-                type, temperature, isLiquid);
-            var actual = creator.CreateCargo();
+            ICargoCreator creator = new ConcreteCargoCreator(category, type);
+            var actual = creator.CreateCargo(id, weight, volume, temperature, isLiquid);
             Assert.AreEqual(expected, actual);
         }
 
@@ -38,9 +37,8 @@ namespace CarFleetLibTests.CargosTests.FactoriesTests
             var category = "Materials";
             var type = "Glass";
             var expected = new Glass(id, weight, volume, temperature, isLiquid);
-            ICargoCreator creator = new ConcreteCargoCreator(id, weight, volume, category,
-                type, temperature, isLiquid);
-            var actual = creator.CreateCargo();
+            ICargoCreator creator = new ConcreteCargoCreator(category, type);
+            var actual = creator.CreateCargo(id, weight, volume, temperature, isLiquid);
             Assert.AreEqual(expected, actual);
         }
 
@@ -55,9 +53,8 @@ namespace CarFleetLibTests.CargosTests.FactoriesTests
             var category = "Chemistry";
             var type = "Gas";
             var expected = new Gas(id, weight, volume, temperature, isLiquid);
-            ICargoCreator creator = new ConcreteCargoCreator(id, weight, volume, category,
-                type, temperature, isLiquid);
-            var actual = creator.CreateCargo();
+            ICargoCreator creator = new ConcreteCargoCreator(category, type);
+            var actual = creator.CreateCargo(id, weight, volume, temperature, isLiquid);
             Assert.AreEqual(expected, actual);
         }
 
@@ -74,9 +71,8 @@ namespace CarFleetLibTests.CargosTests.FactoriesTests
             var type = "Gas";
             try
             {
-                ICargoCreator creator = new ConcreteCargoCreator(id, weight, volume, category,
-                    type, temperature, isLiquid);
-                var cargo = creator.CreateCargo();
+                ICargoCreator creator = new ConcreteCargoCreator(category, type);
+                var cargo = creator.CreateCargo(id, weight, volume, temperature, isLiquid);
             }
             catch (ObjectExistenceException)
             {

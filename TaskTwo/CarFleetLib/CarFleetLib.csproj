@@ -47,11 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cargos\Categories\CargoCategory.cs" />
-    <Compile Include="Cargos\Categories\Chemistry.cs" />
-    <Compile Include="Cargos\Categories\ICargoCategory.cs" />
-    <Compile Include="Cargos\Categories\Materials.cs" />
-    <Compile Include="Cargos\Categories\Products.cs" />
     <Compile Include="Cargos\Entities\Board.cs" />
     <Compile Include="Cargos\Entities\Cheese.cs" />
     <Compile Include="Cargos\Entities\Brick.cs" />
@@ -60,7 +55,6 @@
     <Compile Include="Cargos\Entities\Diesel.cs" />
     <Compile Include="Cargos\Factories\BoardCreator.cs" />
     <Compile Include="Cargos\Factories\BrickCreator.cs" />
-    <Compile Include="Cargos\Factories\CargoCategoryCreator.cs" />
     <Compile Include="Cargos\Factories\CargoCreator.cs" />
     <Compile Include="Cargos\Factories\CheeseCreator.cs" />
     <Compile Include="Cargos\Factories\ChemistryCargoContainer.cs" />
@@ -71,7 +65,6 @@
     <Compile Include="Cargos\Factories\ConcreteCargoCreator.cs" />
     <Compile Include="Cargos\Factories\IBoardCreator.cs" />
     <Compile Include="Cargos\Factories\IBrickCreator.cs" />
-    <Compile Include="Cargos\Factories\ICargoCategoryCreator.cs" />
     <Compile Include="Cargos\Factories\ICargoCreator.cs" />
     <Compile Include="Cargos\Factories\ICheeseCreator.cs" />
     <Compile Include="Cargos\Factories\IDieselCreator.cs" />
@@ -80,7 +73,7 @@
     <Compile Include="Cargos\Factories\IMeatCreator.cs" />
     <Compile Include="Cargos\Factories\IMilkCreator.cs" />
     <Compile Include="Cargos\Factories\IPetrolCreator.cs" />
-    <Compile Include="Cargos\Factories\MaterialCargoContainer.cs" />
+    <Compile Include="Cargos\Factories\MaterialsCargoContainer.cs" />
     <Compile Include="Cargos\Factories\MaterialsCargoCreator.cs" />
     <Compile Include="Cargos\Entities\Gas.cs" />
     <Compile Include="Cargos\Entities\Glass.cs" />
@@ -97,26 +90,22 @@
     <Compile Include="Cargos\Entities\ProductCargo.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="FileProcessor\CargosXml.cs" />
-    <Compile Include="FileProcessor\CargoCategoriesXml.cs" />
     <Compile Include="FileProcessor\Connection.cs" />
     <Compile Include="FileProcessor\IRepository.cs" />
-    <Compile Include="FileProcessor\TrailerCategoriesXml.cs" />
     <Compile Include="FileProcessor\TrailersXml.cs" />
     <Compile Include="Logistic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Trailers\Categories\Awning.cs" />
-    <Compile Include="Trailers\Categories\ITrailerCategory.cs" />
-    <Compile Include="Trailers\Categories\Refrigerator.cs" />
-    <Compile Include="Trailers\Categories\Tanker.cs" />
-    <Compile Include="Trailers\Categories\TrailerCategory.cs" />
     <Compile Include="Trailers\Entities\AwningTrailer.cs" />
+    <Compile Include="Trailers\Entities\AwningTrailerLoader.cs" />
     <Compile Include="Trailers\Entities\IFrozen.cs" />
+    <Compile Include="Trailers\Entities\ILoader.cs" />
     <Compile Include="Trailers\Entities\ITrailer.cs" />
+    <Compile Include="Trailers\Entities\Loader.cs" />
     <Compile Include="Trailers\Entities\RefrigeratorTrailer.cs" />
+    <Compile Include="Trailers\Entities\RefrigeratorTrailerLoader.cs" />
     <Compile Include="Trailers\Entities\TankerTrailer.cs" />
+    <Compile Include="Trailers\Entities\TankerTrailerLoader.cs" />
     <Compile Include="Trailers\Entities\Trailer.cs" />
-    <Compile Include="Trailers\Factories\ITrailerCategoryCreator.cs" />
-    <Compile Include="Trailers\Factories\TrailerCategoryCreator.cs" />
     <Compile Include="Trucks\Categories\ITruckCategory.cs" />
     <Compile Include="Trucks\Categories\Tractor.cs" />
     <Compile Include="Trucks\Categories\TruckCategory.cs" />
@@ -136,6 +125,8 @@
       <Name>ExceptionsLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Trailers\Factories\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

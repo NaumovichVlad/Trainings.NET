@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarFleetLib.Cargos.Factories
 {
-    public class MaterialCargoContainer : NinjectModule
+    public class MaterialsCargoContainer : NinjectModule
     {
         public override void Load()
         {

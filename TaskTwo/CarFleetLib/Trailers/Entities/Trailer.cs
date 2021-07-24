@@ -11,6 +11,7 @@ namespace CarFleetLib.Trailers.Entities
     abstract public class Trailer : ITrailer
     {
         private List<ICargo> cargos = null;
+        protected abstract ILoader Loader { get;}
         public int TrailerId { get; set; }
         public double LoadСapacity { get; set; }
         public double Volume { get; set; }
@@ -32,7 +33,8 @@ namespace CarFleetLib.Trailers.Entities
             weight += cargosForLoad.Sum(c => c.Weight);
             var volume = CalculateTotalCargoVolume();
             volume += cargos.Sum(c => c.Volume);
-            if (weight <= LoadСapacity && volume <= Volume)
+            if (weight <= LoadСapacity && volume <= Volume && 
+                Loader.CheckAdditionalLoadingConditions(cargos, cargosForLoad))
             {
                 cargos = cargos.Concat(cargosForLoad).ToList();
             }

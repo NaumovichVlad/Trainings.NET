@@ -18,3 +18,5 @@ E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetTestsLib\obj\Debug\CarFleet
 E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetTestsLib\obj\Debug\CarFleetTestsLib.pdb
 E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetTestsLib\bin\Debug\ExceptionsLib.dll
 E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetTestsLib\bin\Debug\ExceptionsLib.pdb
+E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetTestsLib\bin\Debug\Ninject.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskTwo\CarFleetTestsLib\bin\Debug\Ninject.xml

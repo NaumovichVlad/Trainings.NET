@@ -1,5 +1,4 @@
-﻿using CarFleetLib.Cargos.Categories;
-using CarFleetLib.Cargos.Entities;
+﻿using CarFleetLib.Cargos.Entities;
 using CarFleetLib.Cargos.Factories;
 using CarFleetLib.FileProcessor;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -21,12 +20,9 @@ namespace CarFleetLibTests.FileProcessorTests
         public void Save_TestOne()
         {
             var filler = new FillerForTests();
-            filler.FillCargoCategoriesXml();
-            ICargoCreator cargoCreator = new ConcreteCargoCreator(
-                1, 100, 100, "Products", "Milk", -10, true
-            );
+            ICargoCreator cargoCreator = new ConcreteCargoCreator("Products", "Milk");
             var cargos = new List<ICargo>();
-            cargos.Add(cargoCreator.CreateCargo());
+            cargos.Add(cargoCreator.CreateCargo(1, 100, 100, -10, true));
             IRepository<ICargo> cargosXml = new CargosXml();
             cargosXml.Save(cargos);
             string expected, actual;
@@ -45,12 +41,9 @@ namespace CarFleetLibTests.FileProcessorTests
         public void Load_TestOne()
         {
             var filler = new FillerForTests();
-            filler.FillCargoCategoriesXml();
-            ICargoCreator cargoCreator = new ConcreteCargoCreator(
-                1, 100, 100, "Products", "Milk", -10, true
-            );
+            ICargoCreator cargoCreator = new ConcreteCargoCreator("Products", "Milk");
             var expectedList = new List<ICargo>();
-            expectedList.Add(cargoCreator.CreateCargo());
+            expectedList.Add(cargoCreator.CreateCargo(1, 100, 100, -10, true));
             IRepository<ICargo> cargosXml = new CargosXml();
             cargosXml.Save(expectedList);
             var actualList = cargosXml.Load();

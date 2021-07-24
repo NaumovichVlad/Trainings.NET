@@ -12,7 +12,7 @@ namespace CarFleetLib.Cargos.Factories
     public class ChemistryCargoCreator : CargoCreator
     {
         string type = string.Empty;
-        IKernel container = new StandardKernel(new ProductsCargoContainer());
+        IKernel container = new StandardKernel(new ChemistryCargoContainer());
 
         public ChemistryCargoCreator(string type)
         {

@@ -30,10 +30,10 @@ namespace CarFleetLib.Cargos.Factories
                     cargoCreator = new ProductsCargoCreator(type);
                     break;
                 case CargoCategories.Chemistry:
-                    cargoCreator = new ChemistryCargoCreator(id, weight, volume, type, optimalStorageTemperature, isLiquid);
+                    cargoCreator = new ChemistryCargoCreator(type);
                     break;
                 case CargoCategories.Materials:
-                    cargoCreator = new MaterialsCargoCreator(id, weight, volume, type, optimalStorageTemperature, isLiquid);
+                    cargoCreator = new MaterialsCargoCreator(type);
                     break;
             }
             ICargo cargo = cargoCreator.CreateCargo(id, weight, volume, optimalStorageTemperature, isLiquid);

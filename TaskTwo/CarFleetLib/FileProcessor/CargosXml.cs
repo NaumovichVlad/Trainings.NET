@@ -1,5 +1,4 @@
 ﻿using CarFleetLib.Cargos;
-using CarFleetLib.Cargos.Categories;
 using CarFleetLib.Cargos.Entities;
 using CarFleetLib.Cargos.Factories;
 using ExceptionsLib;
@@ -34,7 +33,7 @@ namespace CarFleetLib.FileProcessor
                     xmlWriter.WriteString(cargo.GetCargoType().ToString());
                     xmlWriter.WriteEndElement();
                     xmlWriter.WriteStartElement("cargoCategoryId");
-                    xmlWriter.WriteString(GetCategoryIdByName(cargo.GetCargoCategory()).ToString());
+                    xmlWriter.WriteString(GetCategoryIdByName(cargo.GetCargoCategory().ToString()).ToString());
                     xmlWriter.WriteEndElement();
                     xmlWriter.WriteStartElement("weight");
                     xmlWriter.WriteString(cargo.Weight.ToString());
@@ -114,8 +113,7 @@ namespace CarFleetLib.FileProcessor
                                 reader.Read();
                                 isLiquid = Convert.ToBoolean(reader.Value);
                                 var category = GetCategoryById(categoryId);
-                                var categoryCreator = new CargoCategoryCreator();
-                                var cargoCreator = new ConcreteCargoCreator(category.GetName().ToString(), cargoType);
+                                var cargoCreator = new ConcreteCargoCreator(category, cargoType);
                                 cargos.Add(cargoCreator.CreateCargo(cargoId, weight, volume,
                                     optimalStorageTemperature, isLiquid));
                                 break;
@@ -126,20 +124,69 @@ namespace CarFleetLib.FileProcessor
             return cargos;
         }
 
-        private ICargoCategory GetCategoryById(int categoryId)
+        private string GetCategoryById(int categoryId)
         {
-            IRepository<ICargoCategory> categoryReader = new CargoCategoriesXml();
-            var categories = categoryReader.Load();
-            var category = categories.Find(c => c.CategoryId == categoryId);
-            return category;
+            var categoryName = string.Empty;
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.Schemas.Add(null, GetCargoCategoriesSchemaConnection());
+            settings.ValidationType = ValidationType.Schema;
+            settings.ValidationEventHandler += new ValidationEventHandler(CargosValidationEventHandler);
+            using (XmlReader reader = XmlReader.Create(GetCargoCategoriesConnection(), settings))
+            {
+                while (reader.Read())
+                {
+                    if (reader.NodeType == XmlNodeType.Element)
+                    {
+                        if (reader.Name == "categoryId")
+                        {
+                            reader.Read();
+                            if (Convert.ToInt32(reader.Value) == categoryId)
+                            {
+                                do
+                                {
+                                    reader.Read();
+                                } while (reader.Name != "categoryName");
+                                reader.Read();
+                                categoryName = reader.Value;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            return categoryName;
         }
 
-        private int GetCategoryIdByName(CargoCategories categoryName)
+        private int GetCategoryIdByName(string categoryName)
         {
-            IRepository<ICargoCategory> categoryReader = new CargoCategoriesXml();
-            var categories = categoryReader.Load();
-            var category = categories.Find(c => c.GetName() == categoryName);
-            return category.CategoryId;
+            var categoryId = 0;
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.Schemas.Add(null, GetCargoCategoriesSchemaConnection());
+            settings.ValidationType = ValidationType.Schema;
+            settings.ValidationEventHandler += new ValidationEventHandler(CargosValidationEventHandler);
+            using (XmlReader reader = XmlReader.Create(GetCargoCategoriesConnection(), settings))
+            {
+                while (reader.Read())
+                {
+                    if (reader.NodeType == XmlNodeType.Element)
+                    {
+                        if (reader.Name == "categoryId")
+                        {
+                            reader.Read();
+                            categoryId = Convert.ToInt32(reader.Value);
+                            do
+                            {
+                                reader.Read();
+                            } while (reader.Name != "categoryName");
+                            reader.Read();
+                            var categoryNameXml = reader.Value;
+                            if (categoryNameXml == categoryName)
+                                break;
+                        }
+                    }
+                }
+            }
+            return categoryId;
         }
 
         private void CargosValidationEventHandler(object sender, ValidationEventArgs e)

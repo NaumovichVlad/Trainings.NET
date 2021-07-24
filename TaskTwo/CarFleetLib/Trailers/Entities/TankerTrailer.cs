@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace CarFleetLib.Trailers.Entities
 {
-    abstract public class TankerTrailer : Trailer
+    public class TankerTrailer : Trailer
     {
+        protected override ILoader Loader { get; }
         public TankerTrailer (int id, double loadCapacity, double volume, double ownWeight)
             : base (id, loadCapacity, volume, ownWeight)
-        { }
+        {
+            Loader = new TankerTrailerLoader();
+        }
 
         public override TrailerCategories GetTrailerType()
         {

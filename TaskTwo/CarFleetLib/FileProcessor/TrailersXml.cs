@@ -1,5 +1,4 @@
-﻿using CarFleetLib.Trailers.Categories;
-using CarFleetLib.Trailers.Entities;
+﻿using CarFleetLib.Trailers.Entities;
 using ExceptionsLib;
 using System;
 using System.Collections.Generic;
