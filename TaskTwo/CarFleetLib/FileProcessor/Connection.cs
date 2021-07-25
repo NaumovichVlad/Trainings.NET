@@ -42,5 +42,21 @@ namespace CarFleetLib.FileProcessor
         {
             return connectionString + "trailersSchema.xsd";
         }
+        protected string GetInvoicesConnection()
+        {
+            return connectionString + "invoices.xml";
+        }
+        protected string GetInvoicesSchemaConnection()
+        {
+            return connectionString + "invoicesSchema.xsd";
+        }
+        protected string GetTrucksConnection()
+        {
+            return connectionString + "trucks.xml";
+        }
+        protected string GetTrucksSchemaConnection()
+        {
+            return connectionString + "trucksSchema.xsd";
+        }
     }
 }

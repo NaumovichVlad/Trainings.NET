@@ -65,6 +65,38 @@ namespace CarFleetLib.Trailers.Entities
             return unloadedCargo;
         }
 
+        public List<ICargo> ShowCargo()
+        {
+            return cargos;
+        }
+
         abstract public TrailerCategories GetTrailerType();
+
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Trailer);
+        }
+
+        public bool Equals(Trailer trailer)
+        {
+            var flag = false;
+            if (trailer != null)
+            {
+                if (trailer.TrailerId == TrailerId &&
+                    trailer.LoadСapacity == LoadСapacity &&
+                    trailer.Volume == Volume &&
+                    trailer.OwnWeight == OwnWeight &&
+                    trailer.GetTrailerType() == GetTrailerType())
+                {
+                    flag = true;
+                }
+            }
+            return flag;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(LoadСapacity, Volume, GetTrailerType(), OwnWeight, TrailerId);
+        }
     }
 }

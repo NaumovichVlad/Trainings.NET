@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<trucks>
+  <truck>
+    <truckId>1</truckId>
+    <truckBrand>MAZ</truckBrand>
+    <registerNumber>1111</registerNumber>
+    <loadCapacity>1</loadCapacity>
+    <fuelConsamption>1</fuelConsamption>
+    <fuelConsamptionPerTonOfCargo>1</fuelConsamptionPerTonOfCargo>
+    <trailerId>0</trailerId>
+  </truck>
+</trucks>

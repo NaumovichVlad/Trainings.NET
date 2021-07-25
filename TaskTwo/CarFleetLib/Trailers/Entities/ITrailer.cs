@@ -18,6 +18,7 @@ namespace CarFleetLib.Trailers.Entities
 
         void LoadCargo(List<ICargo> cargos);
         List<ICargo> UnloadCargo();
+        List<ICargo> ShowCargo();
         TrailerCategories GetTrailerType();
     }
 }

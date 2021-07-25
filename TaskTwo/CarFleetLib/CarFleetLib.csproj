@@ -93,6 +93,7 @@
     <Compile Include="FileProcessor\Connection.cs" />
     <Compile Include="FileProcessor\IRepository.cs" />
     <Compile Include="FileProcessor\TrailersXml.cs" />
+    <Compile Include="FileProcessor\TrucksXml.cs" />
     <Compile Include="Logistic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trailers\Entities\AwningTrailer.cs" />
@@ -106,15 +107,13 @@
     <Compile Include="Trailers\Entities\TankerTrailer.cs" />
     <Compile Include="Trailers\Entities\TankerTrailerLoader.cs" />
     <Compile Include="Trailers\Entities\Trailer.cs" />
-    <Compile Include="Trucks\Categories\ITruckCategory.cs" />
-    <Compile Include="Trucks\Categories\Tractor.cs" />
-    <Compile Include="Trucks\Categories\TruckCategory.cs" />
+    <Compile Include="Trailers\Factories\ITrailerCreator.cs" />
+    <Compile Include="Trailers\Factories\TrailerCreator.cs" />
     <Compile Include="Trucks\Entities\ITruck.cs" />
-    <Compile Include="Trucks\Entities\ITruckTractor.cs" />
     <Compile Include="Trucks\Entities\Truck.cs" />
     <Compile Include="Trucks\Entities\TruckTractor.cs" />
-    <Compile Include="Trucks\Factories\ITruckCategoryCreator.cs" />
-    <Compile Include="Trucks\Factories\TruckCategoryCreator.cs" />
+    <Compile Include="Trucks\Factories\ITruckCreator.cs" />
+    <Compile Include="Trucks\Factories\TruckCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -125,8 +124,6 @@
       <Name>ExceptionsLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Trailers\Factories\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

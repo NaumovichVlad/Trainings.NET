@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CarFleetLib.Cargos.Entities;
 
 namespace CarFleetLib.Trucks.Entities
 {
-    public class TruckTractor : Truck, ITruckTractor
+    public class TruckTractor : Truck
     {
         private ITrailer trailer;
+
         public TruckTractor(int truckId, string truckBrand, string registerNumber,
             double loadCapacity, double fuelConsumption, double fuelConsumptionPerTonOfCargo)
             : base(truckId, truckBrand, registerNumber, loadCapacity, fuelConsumption, fuelConsumptionPerTonOfCargo)
@@ -38,11 +40,12 @@ namespace CarFleetLib.Trucks.Entities
             return fuelConsumption;
         }
 
-        public void AttachTrailer(ITrailer trailer)
+        public override void AttachTrailer(ITrailer trailer)
         {
-            if (this.trailer == null)
+            if (this.trailer == null && trailer != null)
             {
                 this.trailer = trailer;
+                TrailerId = trailer.TrailerId;
             }
             else
             {
@@ -50,7 +53,7 @@ namespace CarFleetLib.Trucks.Entities
             }
         }
 
-        public ITrailer UnhookTrailer()
+        public override ITrailer UnhookTrailer()
         {
             ITrailer unhookedTrailer = null;
             if (trailer != null)
@@ -66,6 +69,40 @@ namespace CarFleetLib.Trucks.Entities
         public override TruckCategories GetTruckCategory()
         {
             return TruckCategories.TruckTractor;
+        }
+
+        public override List<ICargo> UnloadCargo()
+        {
+            var cargos = new List<ICargo>();
+            if (trailer != null)
+            {
+                cargos = trailer.UnloadCargo();
+            }
+            else
+                throw new TrailerExistenceExeption("The trailer is not attached");
+            return cargos;
+        }
+
+        public override void LoadCargo(List<ICargo> cargoList)
+        {
+            if (trailer != null)
+            {
+                trailer.LoadCargo(cargoList);
+            }
+            else
+                throw new TrailerExistenceExeption("The trailer is not attached");
+        }
+
+        public override List<ICargo> ShowCargo()
+        {
+            var cargos = new List<ICargo>();
+            if (trailer != null)
+            {
+                cargos = trailer.ShowCargo();
+            }
+            else
+                throw new TrailerExistenceExeption("The trailer is not attached");
+            return cargos;
         }
     }
 }
