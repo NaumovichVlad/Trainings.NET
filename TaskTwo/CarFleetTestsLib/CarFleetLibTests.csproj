@@ -52,8 +52,11 @@
   <ItemGroup>
     <Compile Include="CargosTests\CargoTests.cs" />
     <Compile Include="CargosTests\FactoriesTests\CargoCreatorTests.cs" />
+    <Compile Include="FileProcessorTests\CargosStreamTests.cs" />
     <Compile Include="FileProcessorTests\CargosXmlTests.cs" />
+    <Compile Include="FileProcessorTests\TrailersStreamTests.cs" />
     <Compile Include="FileProcessorTests\TrailersXmlTests.cs" />
+    <Compile Include="FileProcessorTests\TrucksStreamTests.cs" />
     <Compile Include="FileProcessorTests\TruckXmlTests.cs" />
     <Compile Include="FillerForTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -89,10 +89,13 @@
     <Compile Include="Cargos\Entities\Milk.cs" />
     <Compile Include="Cargos\Entities\ProductCargo.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="FileProcessor\CargosStream.cs" />
     <Compile Include="FileProcessor\CargosXml.cs" />
     <Compile Include="FileProcessor\Connection.cs" />
     <Compile Include="FileProcessor\IRepository.cs" />
+    <Compile Include="FileProcessor\TrailersStream.cs" />
     <Compile Include="FileProcessor\TrailersXml.cs" />
+    <Compile Include="FileProcessor\TrucksStream.cs" />
     <Compile Include="FileProcessor\TrucksXml.cs" />
     <Compile Include="Logistic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
