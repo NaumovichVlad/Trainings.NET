@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CarFleetLib.FileProcessor
 {
+    /// <summary>
+    /// Getting access to files
+    /// </summary>
     abstract public class Connection
     {
         private string connectionString = "../../../Data/";

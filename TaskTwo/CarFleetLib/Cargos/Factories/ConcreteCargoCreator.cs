@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CarFleetLib.Cargos.Entities;
 using ExceptionsLib;
 
 namespace CarFleetLib.Cargos.Factories
 {
+    /// <summary>
+    /// Factory for create cargo
+    /// </summary>
     public class ConcreteCargoCreator : CargoCreator
     {
         string category = string.Empty;

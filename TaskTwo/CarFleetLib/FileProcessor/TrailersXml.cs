@@ -12,6 +12,9 @@ using System.Xml.Schema;
 
 namespace CarFleetLib.FileProcessor
 {
+    /// <summary>
+    /// Class for reading trailer data with XmlReader/XmlWriter
+    /// </summary>
     public class TrailersXml : Connection, IRepository<ITrailer>
     {
         public void Save(List<ITrailer> trailers)

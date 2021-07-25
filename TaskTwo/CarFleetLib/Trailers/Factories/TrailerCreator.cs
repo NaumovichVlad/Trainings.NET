@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace CarFleetLib.Trailers.Factories
 {
+    /// <summary>
+    /// Factory for creating trailers
+    /// </summary>
     public class TrailerCreator : ITrailerCreator
     {
         public ITrailer CreateTrailer(int id, double loadCapacity, double volume, double ownWeight, string category)

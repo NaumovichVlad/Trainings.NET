@@ -16,6 +16,9 @@ using CarFleetLib.Cargos.Factories;
 
 namespace CarFleetLib.FileProcessor
 {
+    /// <summary>
+    /// Class for reading trucks data with StreamReader/StreamWriter
+    /// </summary>
     public class TrucksStream : Connection, IRepository<ITruck>
     {
         public void Save(List<ITruck> trucks)

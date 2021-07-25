@@ -12,8 +12,15 @@ using System.Xml.Schema;
 
 namespace CarFleetLib.FileProcessor
 {
+    /// <summary>
+    /// Class for reading cargo data with XmlReader/XmlWriter
+    /// </summary>
     public class CargosXml : Connection, IRepository<ICargo>
     {
+        /// <summary>
+        /// Saving cargo data
+        /// </summary>
+        /// <param name="cargos"></param>
         public void Save(List<ICargo> cargos)
         {
             XmlWriterSettings settings = new XmlWriterSettings();
@@ -62,6 +69,11 @@ namespace CarFleetLib.FileProcessor
             return temperature;
 
         }
+
+        /// <summary>
+        /// Reading cargo data from an xml file
+        /// </summary>
+        /// <returns></returns>
         public List<ICargo> Load()
         {
             var cargos = new List<ICargo>();

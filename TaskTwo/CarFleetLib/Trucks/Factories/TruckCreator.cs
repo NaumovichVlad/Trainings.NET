@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace CarFleetLib.Trucks.Factories
 {
+    /// <summary>
+    /// Factory for creating trucks
+    /// </summary>
     public class TruckCreator : ITruckCreator
     {
         public ITruck CreateTruck(int truckId, string truckBrand, string registerNumber,

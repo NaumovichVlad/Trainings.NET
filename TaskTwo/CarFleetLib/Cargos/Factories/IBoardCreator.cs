@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CarFleetLib.Cargos.Factories
+﻿namespace CarFleetLib.Cargos.Factories
 {
+    /// <summary>
+    /// Interface for boardCreator
+    /// </summary>
     public interface IBoardCreator : ICargoCreator
     { }
 }

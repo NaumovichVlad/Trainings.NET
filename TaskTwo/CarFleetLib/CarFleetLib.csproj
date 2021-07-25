@@ -21,6 +21,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -97,7 +99,8 @@
     <Compile Include="FileProcessor\TrailersXml.cs" />
     <Compile Include="FileProcessor\TrucksStream.cs" />
     <Compile Include="FileProcessor\TrucksXml.cs" />
-    <Compile Include="Logistic.cs" />
+    <Compile Include="ISearcher.cs" />
+    <Compile Include="Searcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trailers\Entities\AwningTrailer.cs" />
     <Compile Include="Trailers\Entities\AwningTrailerLoader.cs" />

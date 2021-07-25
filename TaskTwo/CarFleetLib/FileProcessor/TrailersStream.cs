@@ -15,6 +15,9 @@ using CarFleetLib.Cargos.Factories;
 
 namespace CarFleetLib.FileProcessor
 {
+    /// <summary>
+    /// Class for reading trailers data with StreamReader/StreamWriter
+    /// </summary>
     public class TrailersStream : Connection, IRepository<ITrailer>
     {
         public void Save(List<ITrailer> trailers)

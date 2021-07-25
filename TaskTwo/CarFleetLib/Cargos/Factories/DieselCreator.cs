@@ -1,12 +1,10 @@
 ﻿using CarFleetLib.Cargos.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarFleetLib.Cargos.Factories
 {
+    /// <summary>
+    /// Class for creating an instance of the diesel 
+    /// </summary>
     public class DieselCreator : CargoCreator, IDieselCreator
     {
         public override ICargo CreateCargo(int id, double weight, double volume, double optimalStorageTemperature, bool isLiquid)

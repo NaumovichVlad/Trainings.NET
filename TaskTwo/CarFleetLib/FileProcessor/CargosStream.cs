@@ -13,8 +13,15 @@ using System.Xml.Linq;
 
 namespace CarFleetLib.FileProcessor
 {
+    /// <summary>
+    /// Class for reading cargo data with StreamReader/StreamWriter
+    /// </summary>
     public class CargosStream : Connection, IRepository<ICargo>
     {
+        /// <summary>
+        /// Saving cargo data
+        /// </summary>
+        /// <param name="cargos">Cargos</param>
         public void Save(List<ICargo> cargos)
         {
             using (StreamWriter sw = new StreamWriter(GetCargosConnection()))
@@ -38,6 +45,10 @@ namespace CarFleetLib.FileProcessor
             }
         }
 
+        /// <summary>
+        /// Reading cargo data from an xml file
+        /// </summary>
+        /// <returns>Cargo</returns>
         public List<ICargo> Load()
         {
             var cargos = new List<ICargo>();

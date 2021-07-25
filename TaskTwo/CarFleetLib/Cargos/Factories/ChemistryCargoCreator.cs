@@ -2,18 +2,21 @@
 using ExceptionsLib;
 using Ninject;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarFleetLib.Cargos.Factories
 {
+    /// <summary>
+    /// Factory for create chemistry cargo
+    /// </summary>
     public class ChemistryCargoCreator : CargoCreator
     {
         string type = string.Empty;
         IKernel container = new StandardKernel(new ChemistryCargoContainer());
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type">Chemistry type</param>
         public ChemistryCargoCreator(string type)
         {
             this.type = type;

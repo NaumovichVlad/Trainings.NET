@@ -14,6 +14,9 @@ using CarFleetLib.Trucks.Factories;
 
 namespace CarFleetLib.FileProcessor
 {
+    /// <summary>
+    /// Class for reading trucks data with XmlReader/XmlWriter
+    /// </summary>
     public class TrucksXml : Connection, IRepository<ITruck>
     {
         public void Save(List<ITruck> trucks)
