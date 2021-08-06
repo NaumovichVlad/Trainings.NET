@@ -9,7 +9,7 @@ namespace DinerLib.Processors
 {
     public interface IProcessor
     {
-        ICarrot ProcessCarrot();
-        IOnion ProcessOnion();
+        ICarrot ProcessCarrot(string processingType, int processingTime);
+        IOnion ProcessOnion(string processingType, int processingTime);
     }
 }

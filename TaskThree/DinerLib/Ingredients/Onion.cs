@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace DinerLib.Ingredients
 {
-    public abstract class Onion : IOnion
+    public abstract class Onion : Ingredient, IOnion
     {
-
+        public Onion (string processingType, int processingTime, DateTime startOfProcessingTime)
+            : base(processingType, processingTime, startOfProcessingTime)
+        { }
     }
 }

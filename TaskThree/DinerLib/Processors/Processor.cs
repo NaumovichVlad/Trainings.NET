@@ -9,7 +9,7 @@ namespace DinerLib.Processors
 {
     public abstract class Processor : IProcessor
     {
-        public abstract ICarrot ProcessCarrot();
-        public abstract IOnion ProcessOnion();
+        public abstract ICarrot ProcessCarrot(string processingType, int processingTime);
+        public abstract IOnion ProcessOnion(string processingType, int processingTime);
     }
 }

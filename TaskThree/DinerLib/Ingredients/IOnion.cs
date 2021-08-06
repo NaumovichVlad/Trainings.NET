@@ -7,6 +7,5 @@ using System.Threading.Tasks;
 namespace DinerLib.Ingredients
 {
     public interface IOnion : IIngredient
-    {
-    }
+    { }
 }

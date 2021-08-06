@@ -5,6 +5,13 @@ VisualStudioVersion = 17.0.31512.422
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinerLib", "DinerLib\DinerLib.csproj", "{65DA49EE-EDEE-4836-B41F-3991B68CD00A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F5B912D7-D7FF-4EB3-9FE8-54D2F2789731}"
+	ProjectSection(SolutionItems) = preProject
+		Data\slicerQueue.txt = Data\slicerQueue.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinerLibTests", "DinerLibTests\DinerLibTests.csproj", "{E0A6B019-F8D3-4223-8F35-36F3638F9B97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +22,10 @@ Global
 		{65DA49EE-EDEE-4836-B41F-3991B68CD00A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65DA49EE-EDEE-4836-B41F-3991B68CD00A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65DA49EE-EDEE-4836-B41F-3991B68CD00A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0A6B019-F8D3-4223-8F35-36F3638F9B97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0A6B019-F8D3-4223-8F35-36F3638F9B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0A6B019-F8D3-4223-8F35-36F3638F9B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0A6B019-F8D3-4223-8F35-36F3638F9B97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
