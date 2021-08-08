@@ -8,17 +8,21 @@ using System.Threading.Tasks;
 
 namespace DinerLib.DataAccess
 {
-    public interface IQueue : IEnumerable
+    /// <summary>
+    /// Storage of information about ingredients in the queue
+    /// </summary>
+    public interface IQueue<T> : IEnumerable
+        where T : IIngredient
     {
         int Count { get; }
-        IIngredient this[int index] { get; set; }
-        List<IIngredient> ToList();
+        T this[int index] { get; set; }
+        List<T> ToList();
 
-        void DeleteFromQueue(IIngredient t);
+        void DeleteFromQueue(T t);
 
-        void AddToQueue(IIngredient ingredient);
+        void AddToQueue(T t);
 
-        IIngredient GetLastInQueue();
+        T GetLastInQueue();
 
         void DeleteReadyMade();
     }

@@ -12,7 +12,7 @@ namespace DinerLib.DataAccess
     {
         abstract public string ConnectionPath { get; }
 
-        public IQueue Load()
+        public IQueue<IIngredient> Load()
         {
             var queueList = new List<IIngredient>();
             using (StreamReader sr = new StreamReader(ConnectionPath))
@@ -24,7 +24,7 @@ namespace DinerLib.DataAccess
             return new Queue(queueList);
         }
 
-        public void Save(IQueue queue)
+        public void Save(IQueue<IIngredient> queue)
         {
             var queueList = queue.ToList();
             using (StreamWriter sw = new StreamWriter(ConnectionPath))

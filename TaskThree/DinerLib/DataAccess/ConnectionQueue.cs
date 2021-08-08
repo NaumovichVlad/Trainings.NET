@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DinerLib.DataAccess
 {
+    /// <summary>
+    /// A class with information about the connection string
+    /// </summary>
     public class ConnectionQueue
     {
         private string path = @"../../../Data/";

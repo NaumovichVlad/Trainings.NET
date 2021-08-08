@@ -16,7 +16,7 @@ namespace DinerLib.Processors
         public abstract IBacon ProcessBacon(int processingTime, double costPrice);
         
 
-        protected DateTime CalculatingTimeWhenSpaceAppears(IQueue queue, int maxProcessors)
+        protected DateTime CalculatingTimeWhenSpaceAppears(IQueue<IIngredient> queue, int maxProcessors)
         {
             int[] spaces = new int[maxProcessors];
             if (queue.Count >= maxProcessors)

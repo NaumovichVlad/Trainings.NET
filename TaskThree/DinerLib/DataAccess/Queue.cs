@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DinerLib.DataAccess
 {
-    public class Queue : IQueue
+    public class Queue : IQueue<IIngredient>
     {
         private List<IIngredient> _queue;
         public int Count { get { return _queue.Count; } }
