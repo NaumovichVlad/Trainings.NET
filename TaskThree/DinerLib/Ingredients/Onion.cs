@@ -8,8 +8,13 @@ namespace DinerLib.Ingredients
 {
     public abstract class Onion : Ingredient, IOnion
     {
-        public Onion (string processingType, int processingTime, DateTime startOfProcessingTime)
-            : base(processingType, processingTime, startOfProcessingTime)
+        public Onion (ProcessingTypes processingType, int processingTime, DateTime startOfProcessingTime, double costPrice)
+            : base(processingType, processingTime, startOfProcessingTime, costPrice)
         { }
+
+        public new IngredientTypes GetIngredientType()
+        {
+            return IngredientTypes.Onion;
+        }
     }
 }

@@ -1,2 +1,3 @@
-{"ProcessingType":"someType","ProcessingTime":10,"StartOfProcessingTime":"2021-01-01T00:00:00"}
-{"ProcessingType":"someType","ProcessingTime":20,"StartOfProcessingTime":"2020-12-03T00:00:00"}
+{"ProcessingType":0,"ProcessingTime":10,"StartOfProcessingTime":"2021-08-08T21:27:05.4222358+03:00","CostPrice":10}
+{"ProcessingType":0,"ProcessingTime":10,"StartOfProcessingTime":"2021-08-08T21:27:05.4222358+03:00","CostPrice":10}
+{"ProcessingType":0,"ProcessingTime":10,"StartOfProcessingTime":"2021-08-08T21:17:05.429213+03:00","CostPrice":10}

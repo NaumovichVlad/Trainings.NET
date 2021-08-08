@@ -8,8 +8,8 @@ namespace DinerLib.Ingredients
 {
     public class FinelyChoppedOnion : Onion, IFinelyChoppedOnion
     {
-        public FinelyChoppedOnion(string processingType, int processingTime, DateTime startOfProcessingTime)
-            : base(processingType, processingTime, startOfProcessingTime)
+        public FinelyChoppedOnion(ProcessingTypes processingType, int processingTime, DateTime startOfProcessingTime, double costPrice)
+            : base(processingType, processingTime, startOfProcessingTime, costPrice)
         { }
     }
 }

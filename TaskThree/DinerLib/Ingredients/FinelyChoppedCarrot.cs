@@ -8,8 +8,8 @@ namespace DinerLib.Ingredients
 {
     public class FinelyChoppedCarrot : Carrot, IFinelyChoppedCarrot
     {
-        public FinelyChoppedCarrot (string processingType, int processingTime, DateTime startOfProcessingTime)
-            : base (processingType, processingTime, startOfProcessingTime)
+        public FinelyChoppedCarrot (ProcessingTypes processingType, int processingTime, DateTime startOfProcessingTime, double costPrice)
+            : base (processingType, processingTime, startOfProcessingTime, costPrice)
         { }
     }
 }

@@ -75,7 +75,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DataAccess\ConnectionQueue.cs" />
     <Compile Include="DataAccess\IQueue.cs" />
     <Compile Include="DataAccess\IQueueJson.cs" />
@@ -83,25 +82,67 @@
     <Compile Include="DataAccess\Queue.cs" />
     <Compile Include="DataAccess\QueueJson.cs" />
     <Compile Include="DataAccess\SlicerQueueJson.cs" />
+    <Compile Include="Diner.cs" />
+    <Compile Include="Dishes\Factories\DishFactory.cs" />
+    <Compile Include="Dishes\Factories\IDishFactory.cs" />
+    <Compile Include="Dishes\Factories\ISaladFactory.cs" />
+    <Compile Include="Dishes\Factories\SaladFactory.cs" />
+    <Compile Include="Dishes\IDrink.cs" />
+    <Compile Include="Dishes\IMeal.cs" />
+    <Compile Include="Dishes\ISalad.cs" />
+    <Compile Include="Dishes\Salad.cs" />
+    <Compile Include="IDiner.cs" />
+    <Compile Include="Dishes\Dish.cs" />
+    <Compile Include="Dishes\Drink.cs" />
+    <Compile Include="Dishes\IDish.cs" />
+    <Compile Include="Dishes\Meal.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Ingredients\Bacon.cs" />
     <Compile Include="Ingredients\Carrot.cs" />
+    <Compile Include="Ingredients\CoarselyChoppedBacon.cs" />
+    <Compile Include="Ingredients\CoarselyChoppedCarrot.cs" />
+    <Compile Include="Ingredients\CoarselyChoppedOnion.cs" />
+    <Compile Include="Ingredients\FinelyChoppedBacon.cs" />
     <Compile Include="Ingredients\FinelyChoppedCarrot.cs" />
     <Compile Include="Ingredients\FinelyChoppedOnion.cs" />
+    <Compile Include="Ingredients\FriedBacon.cs" />
+    <Compile Include="Ingredients\FriedCarrot.cs" />
+    <Compile Include="Ingredients\FriedOnion.cs" />
+    <Compile Include="Ingredients\IBacon.cs" />
+    <Compile Include="Ingredients\ICoarselyChoppedBacon.cs" />
+    <Compile Include="Ingredients\ICoarselyChoppedCarrot.cs" />
+    <Compile Include="Ingredients\ICoarselyChoppedOnion.cs" />
+    <Compile Include="Ingredients\IFinelyChoppedBacon.cs" />
     <Compile Include="Ingredients\IFinelyChoppedCarrot.cs" />
     <Compile Include="Ingredients\IFinelyChoppedOnion.cs" />
     <Compile Include="Ingredients\ICarrot.cs" />
+    <Compile Include="Ingredients\IFriedBacon.cs" />
+    <Compile Include="Ingredients\IFriedCarrot.cs" />
+    <Compile Include="Ingredients\IFriedOnion.cs" />
     <Compile Include="Ingredients\IIngredient.cs" />
     <Compile Include="Ingredients\Ingredient.cs" />
     <Compile Include="Ingredients\IOnion.cs" />
     <Compile Include="Ingredients\Onion.cs" />
+    <Compile Include="Processors\CoarselySlicer.cs" />
     <Compile Include="Processors\FinelySlicer.cs" />
     <Compile Include="Processors\IProcessor.cs" />
     <Compile Include="Processors\Processor.cs" />
+    <Compile Include="Processors\Roaster.cs" />
     <Compile Include="Processors\Slicer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recipes\IngredientForRecipe.cs" />
+    <Compile Include="Recipes\IRecipe.cs" />
+    <Compile Include="Recipes\Recipe.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExceptionsLib\ExceptionsLib.csproj">
+      <Project>{56940ba1-f6f5-4584-b32d-7bdfc3c67393}</Project>
+      <Name>ExceptionsLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,7 +9,9 @@ namespace DinerLib.Processors
 {
     public interface IProcessor
     {
-        ICarrot ProcessCarrot(string processingType, int processingTime);
-        IOnion ProcessOnion(string processingType, int processingTime);
+        ICarrot ProcessCarrot(int processingTime, double costPrice);
+        IOnion ProcessOnion(int processingTime, double costPrice);
+        IBacon ProcessBacon(int processingTime, double costPrice);
+        ProcessingTypes GetProcessingType();
     }
 }

@@ -35,3 +35,5 @@ E:\Учёбка\GitHub\Trainings.Net\TaskThree\DinerLibTests\obj\Debug\DinerLibT
 E:\Учёбка\GitHub\Trainings.Net\TaskThree\DinerLibTests\obj\Debug\DinerLibTests.csproj.CopyComplete
 E:\Учёбка\GitHub\Trainings.Net\TaskThree\DinerLibTests\obj\Debug\DinerLibTests.dll
 E:\Учёбка\GitHub\Trainings.Net\TaskThree\DinerLibTests\obj\Debug\DinerLibTests.pdb
+E:\Учёбка\GitHub\Trainings.Net\TaskThree\DinerLibTests\bin\Debug\ExceptionsLib.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskThree\DinerLibTests\bin\Debug\ExceptionsLib.pdb

@@ -28,3 +28,5 @@ E:\Учёбка\GitHub\Trainings.Net\TaskThree\DinerLib\bin\Debug\System.ValueTu
 E:\Учёбка\GitHub\Trainings.Net\TaskThree\DinerLib\obj\Debug\DinerLib.csproj.CopyComplete
 E:\Учёбка\GitHub\Trainings.Net\TaskThree\DinerLib\obj\Debug\DinerLib.dll
 E:\Учёбка\GitHub\Trainings.Net\TaskThree\DinerLib\obj\Debug\DinerLib.pdb
+E:\Учёбка\GitHub\Trainings.Net\TaskThree\DinerLib\bin\Debug\ExceptionsLib.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskThree\DinerLib\bin\Debug\ExceptionsLib.pdb

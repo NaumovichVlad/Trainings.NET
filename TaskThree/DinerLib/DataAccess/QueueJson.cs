@@ -12,21 +12,21 @@ namespace DinerLib.DataAccess
     {
         abstract public string ConnectionPath { get; }
 
-        public IQueue<IIngredient> Load()
+        public IQueue Load()
         {
             var queueList = new List<IIngredient>();
-            using(StreamReader sr = new StreamReader(ConnectionPath))
+            using (StreamReader sr = new StreamReader(ConnectionPath))
             {
                 string ingredient;
                 while ((ingredient = sr.ReadLine()) != null)
                     queueList.Add(JsonSerializer.Deserialize<Ingredient>(ingredient));
             }
-            return new Queue<IIngredient>(queueList);
+            return new Queue(queueList);
         }
 
-        public void Save(IQueue<IIngredient> queue)
+        public void Save(IQueue queue)
         {
-            var queueList = queue.ShowQueue();
+            var queueList = queue.ToList();
             using (StreamWriter sw = new StreamWriter(ConnectionPath))
             {
                 foreach (var ingredient in queueList)

@@ -8,18 +8,20 @@ namespace DinerLib.Ingredients
 {
     public class Ingredient : IIngredient
     {
-        public string ProcessingType { get; set; }
+        public ProcessingTypes ProcessingType { get; set; }
         public int ProcessingTime { get; set; }
         public DateTime StartOfProcessingTime { get; set; }
+        public double CostPrice { get; set; }
 
-        public Ingredient (string processingType, int processingTime, DateTime startOfProcessingTime)
+        public Ingredient(ProcessingTypes processingType, int processingTime, DateTime startOfProcessingTime, double costPrice)
         {
             ProcessingType = processingType;
             ProcessingTime = processingTime;
             StartOfProcessingTime = startOfProcessingTime;
+            CostPrice = costPrice;
         }
 
-        public Ingredient()
+        protected Ingredient()
         { }
 
         public override bool Equals(object obj)
@@ -32,7 +34,8 @@ namespace DinerLib.Ingredients
             {
                 if (ProcessingTime == ingredient.ProcessingTime &&
                     ProcessingType == ingredient.ProcessingType &&
-                    StartOfProcessingTime == ingredient.StartOfProcessingTime)
+                    StartOfProcessingTime - ingredient.StartOfProcessingTime < TimeSpan.FromSeconds(1) &&
+                    CostPrice == ingredient.CostPrice)
                 {
                     return true;
                 }
@@ -43,6 +46,11 @@ namespace DinerLib.Ingredients
         public override int GetHashCode()
         {
             return HashCode.Combine(ProcessingTime, ProcessingType, StartOfProcessingTime);
+        }
+
+        public IngredientTypes GetIngredientType()
+        {
+            return IngredientTypes.Default;
         }
     }
 }

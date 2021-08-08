@@ -8,8 +8,11 @@ namespace DinerLib.Ingredients
 {
     public interface IIngredient
     {
-        string ProcessingType {  get; set; }
+        ProcessingTypes ProcessingType {  get; set; }
         int ProcessingTime {  get; set; }
         DateTime StartOfProcessingTime { get; set; }
+        double CostPrice { get; set; }
+
+        IngredientTypes GetIngredientType();
     }
 }

@@ -8,8 +8,13 @@ namespace DinerLib.Ingredients
 {
     public class Carrot : Ingredient, ICarrot
     {
-        public Carrot (string processingType, int processingTime, DateTime startOfProcessingTime)
-            : base (processingType, processingTime, startOfProcessingTime)
+        public Carrot (ProcessingTypes processingType, int processingTime, DateTime startOfProcessingTime, double costPrice)
+            : base (processingType, processingTime, startOfProcessingTime, costPrice)
         { }
+
+        public new IngredientTypes GetIngredientType()
+        {
+            return IngredientTypes.Carrot;
+        }
     }
 }

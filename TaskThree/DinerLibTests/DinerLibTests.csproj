@@ -50,6 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\QueueJsonTests.cs" />
+    <Compile Include="Dishes\DishTests.cs" />
+    <Compile Include="Ingredients\IngredientTests.cs" />
+    <Compile Include="Processors\FinelySlicerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +67,7 @@
   <ItemGroup>
     <Content Include="Data\SlicerQueueForTests.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

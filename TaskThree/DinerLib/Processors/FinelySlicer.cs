@@ -1,4 +1,5 @@
-﻿using DinerLib.Ingredients;
+﻿using DinerLib.DataAccess;
+using DinerLib.Ingredients;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,21 +10,49 @@ namespace DinerLib.Processors
 {
     public class FinelySlicer : Slicer
     {
-        public override ICarrot ProcessCarrot(string processingType, int processingTime)
+        const int maxSlicer = 5;
+        public override ICarrot ProcessCarrot(int processingTime, double costPrice)
         {
-            var startOfProcessingTime = AddToQueue(processingTime);
-            return new FinelyChoppedCarrot(processingType, processingTime, startOfProcessingTime);
+            var startOfProcessingTime = CalculateStartTime();
+            var ingredient = new FinelyChoppedCarrot(GetProcessingType(), processingTime, startOfProcessingTime, costPrice);
+            AddToQueue(ingredient);
+            return ingredient;
         }
 
-        public override IOnion ProcessOnion(string processingType, int processingTime)
+        public override IOnion ProcessOnion(int processingTime, double costPrice)
         {
-            var startOfProcessingTime = AddToQueue(processingTime);
-            return new FinelyChoppedOnion(processingType, processingTime, startOfProcessingTime);
+            var startOfProcessingTime = CalculateStartTime();
+            var ingredient = new FinelyChoppedOnion(GetProcessingType(), processingTime, startOfProcessingTime, costPrice);
+            AddToQueue(ingredient);
+            return ingredient;
+        }
+        public override IBacon ProcessBacon(int processingTime, double costPrice)
+        {
+            var startOfProcessingTime = CalculateStartTime();
+            var ingredient = new FinelyChoppedBacon(GetProcessingType(), processingTime, startOfProcessingTime, costPrice);
+            AddToQueue(ingredient);
+            return ingredient;
         }
 
-        private DateTime AddToQueue(int processingTime)
+        private DateTime CalculateStartTime()
         {
-            return DateTime.Now;
+            IQueueJson queueJson = new SlicerQueueJson();
+            var queue = queueJson.Load();
+            var startTime = CalculatingTimeWhenSpaceAppears(queue, maxSlicer);
+            return startTime;
+        }
+
+        private void AddToQueue(IIngredient ingredient)
+        {
+            IQueueJson queueJson = new SlicerQueueJson();
+            var queue = queueJson.Load();
+            queue.AddToQueue(ingredient);
+            queueJson.Save(queue);
+        }
+
+        public override ProcessingTypes GetProcessingType()
+        {
+            return ProcessingTypes.FineSlicing;
         }
     }
 }

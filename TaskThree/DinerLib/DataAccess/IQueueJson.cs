@@ -9,7 +9,7 @@ namespace DinerLib.DataAccess
 {
     public interface IQueueJson
     {
-        void Save (IQueue<IIngredient> queue);
-        IQueue<IIngredient> Load();
+        void Save (IQueue queue);
+        IQueue Load();
     }
 }
