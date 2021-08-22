@@ -1,0 +1,6 @@
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ExceptionsLib\bin\Debug\ExceptionsLib.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ExceptionsLib\bin\Debug\ExceptionsLib.pdb
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ExceptionsLib\obj\Debug\ExceptionsLib.csproj.AssemblyReference.cache
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ExceptionsLib\obj\Debug\ExceptionsLib.csproj.CoreCompileInputs.cache
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ExceptionsLib\obj\Debug\ExceptionsLib.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ExceptionsLib\obj\Debug\ExceptionsLib.pdb

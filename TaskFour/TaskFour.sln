@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31512.422
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlaeCalculatorLib", "SlaeCalculatorLib\SlaeCalculatorLib.csproj", "{0E892DEC-1EC8-463B-A47F-E451C25CBE0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionsLib", "ExceptionsLib\ExceptionsLib.csproj", "{81DE27B7-1EF4-410C-B3C9-DB7646109C4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{6051ABD8-2126-438E-9A37-546A48E62B93}"
+	ProjectSection(SolutionItems) = preProject
+		Data\patterns.txt = Data\patterns.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlaeCalculatorLibTests", "SlaeCalculatorLibTests\SlaeCalculatorLibTests.csproj", "{6E3FA946-01DD-40FB-91D2-8B6B9E06183E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E892DEC-1EC8-463B-A47F-E451C25CBE0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E892DEC-1EC8-463B-A47F-E451C25CBE0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E892DEC-1EC8-463B-A47F-E451C25CBE0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E892DEC-1EC8-463B-A47F-E451C25CBE0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81DE27B7-1EF4-410C-B3C9-DB7646109C4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81DE27B7-1EF4-410C-B3C9-DB7646109C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81DE27B7-1EF4-410C-B3C9-DB7646109C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81DE27B7-1EF4-410C-B3C9-DB7646109C4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E3FA946-01DD-40FB-91D2-8B6B9E06183E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E3FA946-01DD-40FB-91D2-8B6B9E06183E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E3FA946-01DD-40FB-91D2-8B6B9E06183E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E3FA946-01DD-40FB-91D2-8B6B9E06183E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF89234D-E15E-4AD4-91CE-2B45D1C14054}
+	EndGlobalSection
+EndGlobal

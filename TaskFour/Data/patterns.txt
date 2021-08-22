@@ -1,0 +1,4 @@
+The row of coefficients A: ^(\s*(\s+\d+,\d+)+)$
+Coefficients A: \d+,\d+
+The row of coefficients B: ^\s{5}\d+,\d+\n
+Coefficients B: \d+,\d+

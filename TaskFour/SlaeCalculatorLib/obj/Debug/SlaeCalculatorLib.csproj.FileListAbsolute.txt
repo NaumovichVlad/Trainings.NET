@@ -1,0 +1,9 @@
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\SlaeCalculatorLib\bin\Debug\SlaeCalculatorLib.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\SlaeCalculatorLib\bin\Debug\SlaeCalculatorLib.pdb
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\SlaeCalculatorLib\bin\Debug\ExceptionsLib.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\SlaeCalculatorLib\bin\Debug\ExceptionsLib.pdb
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\SlaeCalculatorLib\obj\Debug\SlaeCalculatorLib.csproj.AssemblyReference.cache
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\SlaeCalculatorLib\obj\Debug\SlaeCalculatorLib.csproj.CoreCompileInputs.cache
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\SlaeCalculatorLib\obj\Debug\SlaeCalculatorLib.csproj.CopyComplete
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\SlaeCalculatorLib\obj\Debug\SlaeCalculatorLib.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\SlaeCalculatorLib\obj\Debug\SlaeCalculatorLib.pdb
