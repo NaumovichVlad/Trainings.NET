@@ -1,0 +1,16 @@
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLibTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLibTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLibTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLibTests\bin\Debug\ServerLibTests.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLibTests\bin\Debug\ServerLibTests.pdb
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLibTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLibTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLibTests\bin\Debug\ServerLib.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLibTests\bin\Debug\ServerLib.pdb
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLibTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLibTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLibTests\obj\Debug\ServerLibTests.csproj.AssemblyReference.cache
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLibTests\obj\Debug\ServerLibTests.csproj.CoreCompileInputs.cache
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLibTests\obj\Debug\ServerLibTests.csproj.CopyComplete
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLibTests\obj\Debug\ServerLibTests.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLibTests\obj\Debug\ServerLibTests.pdb

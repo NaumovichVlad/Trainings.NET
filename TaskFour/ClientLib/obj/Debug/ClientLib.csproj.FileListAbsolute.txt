@@ -1,0 +1,6 @@
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ClientLib\obj\Debug\ClientLib.csproj.AssemblyReference.cache
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ClientLib\obj\Debug\ClientLib.csproj.CoreCompileInputs.cache
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ClientLib\bin\Debug\ClientLib.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ClientLib\bin\Debug\ClientLib.pdb
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ClientLib\obj\Debug\ClientLib.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ClientLib\obj\Debug\ClientLib.pdb

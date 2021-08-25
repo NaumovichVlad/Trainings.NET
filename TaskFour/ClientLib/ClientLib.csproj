@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0E892DEC-1EC8-463B-A47F-E451C25CBE0F}</ProjectGuid>
+    <ProjectGuid>{038417DB-C9B5-4F9E-8229-768F30856E77}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SlaeCalculatorLib</RootNamespace>
-    <AssemblyName>SlaeCalculatorLib</AssemblyName>
+    <RootNamespace>ClientLib</RootNamespace>
+    <AssemblyName>ClientLib</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,18 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess\CoefficientFileReader.cs" />
-    <Compile Include="DataAccess\ICoefficientFileReader.cs" />
+    <Compile Include="ClientController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ExceptionsLib\ExceptionsLib.csproj">
-      <Project>{81de27b7-1ef4-410c-b3c9-db7646109c4d}</Project>
-      <Name>ExceptionsLib</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Calculator\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

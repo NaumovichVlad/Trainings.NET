@@ -1,0 +1,6 @@
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLib\bin\Debug\ServerLib.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLib\bin\Debug\ServerLib.pdb
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLib\obj\Debug\ServerLib.csproj.AssemblyReference.cache
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLib\obj\Debug\ServerLib.csproj.CoreCompileInputs.cache
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLib\obj\Debug\ServerLib.dll
+E:\Учёбка\GitHub\Trainings.Net\TaskFour\ServerLib\obj\Debug\ServerLib.pdb
