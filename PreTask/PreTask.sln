@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuclidCalculatorLib", "Eucl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuclidCalculatorLibTests", "EuclidCalculatorLibTests\EuclidCalculatorLibTests.csproj", "{90012E16-8B6C-47E1-8885-DCEA2466EA90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionLib", "ExceptionLib\ExceptionLib.csproj", "{7B3E6C28-A0D7-45B7-AFBA-EDEB7FFAA6E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{90012E16-8B6C-47E1-8885-DCEA2466EA90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90012E16-8B6C-47E1-8885-DCEA2466EA90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90012E16-8B6C-47E1-8885-DCEA2466EA90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B3E6C28-A0D7-45B7-AFBA-EDEB7FFAA6E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B3E6C28-A0D7-45B7-AFBA-EDEB7FFAA6E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B3E6C28-A0D7-45B7-AFBA-EDEB7FFAA6E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B3E6C28-A0D7-45B7-AFBA-EDEB7FFAA6E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

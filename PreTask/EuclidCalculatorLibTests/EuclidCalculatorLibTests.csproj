@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EuclidCalculatorForNumberSetTests.cs" />
     <Compile Include="EuclidCalculatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,6 +60,10 @@
     <ProjectReference Include="..\EuclidCalculatorLib\EuclidCalculatorLib.csproj">
       <Project>{DAC47903-9417-4252-A14D-BC877B3E902A}</Project>
       <Name>EuclidCalculatorLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExceptionLib\ExceptionLib.csproj">
+      <Project>{7B3E6C28-A0D7-45B7-AFBA-EDEB7FFAA6E3}</Project>
+      <Name>ExceptionLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

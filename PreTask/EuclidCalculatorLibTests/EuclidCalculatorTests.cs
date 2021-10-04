@@ -1,4 +1,5 @@
 ﻿using EuclidCalculatorLib;
+using ExceptionLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
@@ -14,6 +15,25 @@ namespace EuclidCalculatorLibTests
             var expected = 3;
             var actual = euclidCalculator.CalculateGcd(12, 9);
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void NotNaturalNumberException_TestOne()
+        {
+            NotNaturalNumberException actual = null;
+            EuclidCalculator euclidCalculator = new EuclidCalculator();
+            try
+            {
+                euclidCalculator.CalculateGcd(12, -1);
+            }
+            catch (NotNaturalNumberException ex)
+            {
+                actual = ex;
+            }
+            finally
+            {
+                Assert.IsNotNull(actual);
+            }
         }
 
         [TestMethod]

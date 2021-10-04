@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DAC47903-9417-4252-A14D-BC877B3E902A}</ProjectGuid>
+    <ProjectGuid>{7B3E6C28-A0D7-45B7-AFBA-EDEB7FFAA6E3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EuclidCalculatorLib</RootNamespace>
-    <AssemblyName>EuclidCalculatorLib</AssemblyName>
+    <RootNamespace>ExceptionLib</RootNamespace>
+    <AssemblyName>ExceptionLib</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,17 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EuclidCalculator.cs" />
-    <Compile Include="EuclidCalculatorDecorator.cs" />
-    <Compile Include="EuclidCalculatorForNumberSet.cs" />
-    <Compile Include="HistogramData.cs" />
+    <Compile Include="NotNaturalNumberException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ExceptionLib\ExceptionLib.csproj">
-      <Project>{7B3E6C28-A0D7-45B7-AFBA-EDEB7FFAA6E3}</Project>
-      <Name>ExceptionLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
