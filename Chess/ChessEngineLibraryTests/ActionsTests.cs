@@ -19,7 +19,7 @@ namespace ChessEngineLibraryTests
             field.Move(new Vector(1, 0), new Vector(7, 2), playerOne);
             var figures = field.GetFigures();
             var actual = figures.GetActiveFigureByPosition(new Vector(7, 2));
-            Assert.AreEqual(null, actual);
+            Assert.AreEqual(FigureType.Knight, actual.GetFigureType());
         }
 
 
