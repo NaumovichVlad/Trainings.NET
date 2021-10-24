@@ -7,10 +7,18 @@ using System.Threading.Tasks;
 
 namespace ChessEngineLibrary.Field
 {
+    /// <summary>
+    /// Handler of actions on the field
+    /// </summary>
     public class FieldHandler : IFieldHandler
     {
-        
-
+        /// <summary>
+        /// Checking for cell occupancy
+        /// </summary>
+        /// <param name="position">Figure position</param>
+        /// <param name="newPosition">New figure position</param>
+        /// <param name="figures">Collection of figures on the field</param>
+        /// <returns></returns>
         public bool CheckCellOccupancy(Vector position, Vector newPosition, IFiguresCollection figures)
         {
             var flag = false;

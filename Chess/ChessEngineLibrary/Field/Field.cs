@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace ChessEngineLibrary.Field
 {
+    /// <summary>
+    /// A class with the basic logic of the game
+    /// </summary>
     public class Field : IField
     {
         IFieldHandler fieldHandler;
@@ -15,6 +18,9 @@ namespace ChessEngineLibrary.Field
         List<IPlayer> players;
         ILog log = new Log();
 
+        /// <summary>
+        /// Field size
+        /// </summary>
         public Vector Size { get; }
 
         public Field (IPlayer playerOne, IPlayer playerTwo)
@@ -25,6 +31,9 @@ namespace ChessEngineLibrary.Field
             fieldHandler = new FieldHandler();
         }
 
+        /// <summary>
+        /// Creating shapes
+        /// </summary>
         private void InitializeFigures()
         {
             foreach (var player in players)
@@ -58,6 +67,12 @@ namespace ChessEngineLibrary.Field
             }
         }
 
+        /// <summary>
+        /// Getting a list of all possible moves of a chess piece at a given position
+        /// </summary>
+        /// <param name="position">Chess piece position</param>
+        /// <param name="player">Active player</param>
+        /// <returns>List of all possible moves</returns>
         public List<Vector> GetPossibleMoves(Vector position, IPlayer player)
         {
             List<Vector> possibleMoves = null;
@@ -79,7 +94,13 @@ namespace ChessEngineLibrary.Field
                 possibleMoves.Remove(delete);
             return possibleMoves;
         }
-        
+
+        /// <summary>
+        /// Making a move with a piece
+        /// </summary>
+        /// <param name="position">Figure position</param>
+        /// <param name="newPosition">New figure position</param>
+        /// <param name="player">Active player</param>
         public void Move(Vector position, Vector newPosition, IPlayer player)
         {
             if (figures.GetActiveFigureByPosition(newPosition) != null)

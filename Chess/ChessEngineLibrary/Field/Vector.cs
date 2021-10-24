@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ChessEngineLibrary.Field
 {
+    /// <summary>
+    /// Field cell coordinates
+    /// </summary>
     public class Vector
     {
         public int CoordinateX { get; private set; }
