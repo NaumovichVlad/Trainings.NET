@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<trailers>
+  <trailer>
+    <trailerId>1</trailerId>
+    <trailerCategoryId>1</trailerCategoryId>
+    <loadCapacity>1</loadCapacity>
+    <volume>1</volume>
+    <weight>1</weight>
+  </trailer>
+</trailers>

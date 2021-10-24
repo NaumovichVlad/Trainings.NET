@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31423.177
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarFleetLibTests", "CarFleetTestsLib\CarFleetLibTests.csproj", "{D7F4E9A7-F8FB-4BE3-A13B-3D68C1384977}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F0EE06FB-3669-40CD-95E1-9A51213BFEE2}"
+	ProjectSection(SolutionItems) = preProject
+		Data\cargoCategories.xml = Data\cargoCategories.xml
+		Data\cargoCategoriesSchema.xsd = Data\cargoCategoriesSchema.xsd
+		Data\cargos.xml = Data\cargos.xml
+		Data\cargosSchema.xsd = Data\cargosSchema.xsd
+		Data\invoices.xml = Data\invoices.xml
+		Data\invoicesSchema.xsd = Data\invoicesSchema.xsd
+		Data\trailerCategories.xml = Data\trailerCategories.xml
+		Data\trailerCategoriesSchema.xsd = Data\trailerCategoriesSchema.xsd
+		Data\trailers.xml = Data\trailers.xml
+		Data\trailersSchema.xsd = Data\trailersSchema.xsd
+		Data\trucks.xml = Data\trucks.xml
+		Data\trucksSchema.xsd = Data\trucksSchema.xsd
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionsLib", "ExceptionsLib\ExceptionsLib.csproj", "{8C5A9C0B-2F43-460F-B2BA-2464C97CA10F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarFleetLib", "CarFleetLib\CarFleetLib.csproj", "{F9BD8DFD-66A0-4BB2-A694-4C6335900CFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7F4E9A7-F8FB-4BE3-A13B-3D68C1384977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7F4E9A7-F8FB-4BE3-A13B-3D68C1384977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7F4E9A7-F8FB-4BE3-A13B-3D68C1384977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7F4E9A7-F8FB-4BE3-A13B-3D68C1384977}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C5A9C0B-2F43-460F-B2BA-2464C97CA10F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C5A9C0B-2F43-460F-B2BA-2464C97CA10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C5A9C0B-2F43-460F-B2BA-2464C97CA10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C5A9C0B-2F43-460F-B2BA-2464C97CA10F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9BD8DFD-66A0-4BB2-A694-4C6335900CFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9BD8DFD-66A0-4BB2-A694-4C6335900CFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9BD8DFD-66A0-4BB2-A694-4C6335900CFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9BD8DFD-66A0-4BB2-A694-4C6335900CFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6AE8A3B-2770-4038-8C9D-DE3CAB139800}
+	EndGlobalSection
+EndGlobal

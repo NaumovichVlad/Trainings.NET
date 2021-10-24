@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F9BD8DFD-66A0-4BB2-A694-4C6335900CFB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CarFleetLib</RootNamespace>
+    <AssemblyName>CarFleet</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cargos\Entities\Board.cs" />
+    <Compile Include="Cargos\Entities\Cheese.cs" />
+    <Compile Include="Cargos\Entities\Brick.cs" />
+    <Compile Include="Cargos\Entities\Cargo.cs" />
+    <Compile Include="Cargos\Entities\ChemistryCargo.cs" />
+    <Compile Include="Cargos\Entities\Diesel.cs" />
+    <Compile Include="Cargos\Factories\BoardCreator.cs" />
+    <Compile Include="Cargos\Factories\BrickCreator.cs" />
+    <Compile Include="Cargos\Factories\CargoCreator.cs" />
+    <Compile Include="Cargos\Factories\CheeseCreator.cs" />
+    <Compile Include="Cargos\Factories\ChemistryCargoContainer.cs" />
+    <Compile Include="Cargos\Factories\ChemistryCargoCreator.cs" />
+    <Compile Include="Cargos\Factories\DieselCreator.cs" />
+    <Compile Include="Cargos\Factories\GasCreator.cs" />
+    <Compile Include="Cargos\Factories\GlassCreator.cs" />
+    <Compile Include="Cargos\Factories\ConcreteCargoCreator.cs" />
+    <Compile Include="Cargos\Factories\IBoardCreator.cs" />
+    <Compile Include="Cargos\Factories\IBrickCreator.cs" />
+    <Compile Include="Cargos\Factories\ICargoCreator.cs" />
+    <Compile Include="Cargos\Factories\ICheeseCreator.cs" />
+    <Compile Include="Cargos\Factories\IDieselCreator.cs" />
+    <Compile Include="Cargos\Factories\IGasCreator.cs" />
+    <Compile Include="Cargos\Factories\IGlassCreator.cs" />
+    <Compile Include="Cargos\Factories\IMeatCreator.cs" />
+    <Compile Include="Cargos\Factories\IMilkCreator.cs" />
+    <Compile Include="Cargos\Factories\IPetrolCreator.cs" />
+    <Compile Include="Cargos\Factories\MaterialsCargoContainer.cs" />
+    <Compile Include="Cargos\Factories\MaterialsCargoCreator.cs" />
+    <Compile Include="Cargos\Entities\Gas.cs" />
+    <Compile Include="Cargos\Entities\Glass.cs" />
+    <Compile Include="Cargos\Entities\Petrol.cs" />
+    <Compile Include="Cargos\Factories\MeatCreator.cs" />
+    <Compile Include="Cargos\Factories\MilkCreator.cs" />
+    <Compile Include="Cargos\Factories\PetrolCreator.cs" />
+    <Compile Include="Cargos\Factories\ProductsCargoContainer.cs" />
+    <Compile Include="Cargos\Factories\ProductsCargoCreator.cs" />
+    <Compile Include="Cargos\Entities\ICargo.cs" />
+    <Compile Include="Cargos\Entities\MaterialCargo.cs" />
+    <Compile Include="Cargos\Entities\Meat.cs" />
+    <Compile Include="Cargos\Entities\Milk.cs" />
+    <Compile Include="Cargos\Entities\ProductCargo.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="FileProcessor\CargosStream.cs" />
+    <Compile Include="FileProcessor\CargosXml.cs" />
+    <Compile Include="FileProcessor\Connection.cs" />
+    <Compile Include="FileProcessor\IRepository.cs" />
+    <Compile Include="FileProcessor\TrailersStream.cs" />
+    <Compile Include="FileProcessor\TrailersXml.cs" />
+    <Compile Include="FileProcessor\TrucksStream.cs" />
+    <Compile Include="FileProcessor\TrucksXml.cs" />
+    <Compile Include="ISearcher.cs" />
+    <Compile Include="Searcher.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trailers\Entities\AwningTrailer.cs" />
+    <Compile Include="Trailers\Entities\AwningTrailerLoader.cs" />
+    <Compile Include="Trailers\Entities\IFrozen.cs" />
+    <Compile Include="Trailers\Entities\ILoader.cs" />
+    <Compile Include="Trailers\Entities\ITrailer.cs" />
+    <Compile Include="Trailers\Entities\Loader.cs" />
+    <Compile Include="Trailers\Entities\RefrigeratorTrailer.cs" />
+    <Compile Include="Trailers\Entities\RefrigeratorTrailerLoader.cs" />
+    <Compile Include="Trailers\Entities\TankerTrailer.cs" />
+    <Compile Include="Trailers\Entities\TankerTrailerLoader.cs" />
+    <Compile Include="Trailers\Entities\Trailer.cs" />
+    <Compile Include="Trailers\Factories\ITrailerCreator.cs" />
+    <Compile Include="Trailers\Factories\TrailerCreator.cs" />
+    <Compile Include="Trucks\Entities\ITruck.cs" />
+    <Compile Include="Trucks\Entities\Truck.cs" />
+    <Compile Include="Trucks\Entities\TruckTractor.cs" />
+    <Compile Include="Trucks\Factories\ITruckCreator.cs" />
+    <Compile Include="Trucks\Factories\TruckCreator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExceptionsLib\ExceptionsLib.csproj">
+      <Project>{8c5a9c0b-2f43-460f-b2ba-2464c97ca10f}</Project>
+      <Name>ExceptionsLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

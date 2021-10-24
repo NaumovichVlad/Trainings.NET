@@ -1,0 +1,21 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="trucks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="truck" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:byte" name="truckId"/>
+              <xs:element type="xs:string" name="truckBrand"/>
+              <xs:element type="xs:string" name="registerNumber"/>
+              <xs:element type="xs:string" name="loadCapacity"/>
+              <xs:element type="xs:byte" name="fuelConsamption"/>
+              <xs:element type="xs:byte" name="fuelConsamptionPerTonOfCargo"/>
+              <xs:element type="xs:string" name="trailerId"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<trailerCategories>
+  <trailerCategory>
+    <categoryId>1</categoryId>
+    <categoryName>Awning</categoryName>
+  </trailerCategory>
+  <trailerCategory>
+    <categoryId>2</categoryId>
+    <categoryName>Tanker</categoryName>
+  </trailerCategory>
+  <trailerCategory>
+    <categoryId>3</categoryId>
+    <categoryName>Refrigerator</categoryName>
+  </trailerCategory>
+</trailerCategories>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cargoCategories>
+  <cargoCategory>
+    <categoryId>1</categoryId>
+    <categoryName>Products</categoryName>
+  </cargoCategory>
+  <cargoCategory>
+    <categoryId>2</categoryId>
+    <categoryName>Materials</categoryName>
+  </cargoCategory>
+  <cargoCategory>
+    <categoryId>3</categoryId>
+    <categoryName>Chemistry</categoryName>
+  </cargoCategory>
+</cargoCategories>

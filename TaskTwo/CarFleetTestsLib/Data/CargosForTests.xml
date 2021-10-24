@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cargos>
+  <cargo>
+    <cargoId>1</cargoId>
+    <cargoType>Milk</cargoType>
+    <cargoCategoryId>1</cargoCategoryId>
+    <weight>100</weight>
+    <volume>100</volume>
+    <optimalStorageTemperature>-10</optimalStorageTemperature>
+    <isLiquid>True</isLiquid>
+  </cargo>
+</cargos>
