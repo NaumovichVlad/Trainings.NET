@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SemiTrailers>
+  <SemiTrailer>
+    <Type>Refrigerator</Type>
+    <LiftingCapacity>120</LiftingCapacity>
+    <AvailableVolume>400</AvailableVolume>
+    <AvailableMass>300</AvailableMass>
+    <UploadedProductType>r</UploadedProductType>
+    <OccupiedVolume>280</OccupiedVolume>
+    <OccupiedWeight>180</OccupiedWeight>
+  </SemiTrailer>
+  <SemiTrailer>
+    <Type>AutoTank</Type>
+    <LiftingCapacity>220</LiftingCapacity>
+    <AvailableVolume>300</AvailableVolume>
+    <AvailableMass>300</AvailableMass>
+    <UploadedProductType>g</UploadedProductType>
+    <OccupiedVolume>120</OccupiedVolume>
+    <OccupiedWeight>200</OccupiedWeight>
+  </SemiTrailer>
+  <SemiTrailer>
+    <Type>TiltSemiTrailer</Type>
+    <LiftingCapacity>300</LiftingCapacity>
+    <AvailableVolume>200</AvailableVolume>
+    <AvailableMass>2</AvailableMass>
+    <UploadedProductType>f</UploadedProductType>
+    <OccupiedVolume>2</OccupiedVolume>
+    <OccupiedWeight>2</OccupiedWeight>
+  </SemiTrailer>
+</SemiTrailers>
