@@ -8,7 +8,7 @@ namespace DinerLib.Ingredients.Onions
 {
     public class StripesSlicedOnion : SlicedOnion
     {
-        public StripesSlicedOnion(double costPrice) : base(costPrice)
+        public StripesSlicedOnion(double costPrice, DateTime createTime) : base(costPrice, createTime)
         { }
 
         public override SlicingTypes SlicingType => SlicingTypes.Stripes;

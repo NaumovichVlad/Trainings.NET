@@ -10,13 +10,13 @@ namespace DinerLib.Processors.Slicers
 {
     internal class CubesSlicer : IConcreteSlicer
     {
-        public ISlicedIngredient ProcessIngredient(IngredientTypes ingredientType)
+        public ISlicedIngredient ProcessIngredient(IngredientTypes ingredientType, DateTime createTime)
         {
             ISlicedIngredient ingredient = null;
             switch (ingredientType)
             {
                 case IngredientTypes.Onion:
-                    ingredient = new CubesSlicedOnion(0);
+                    ingredient = new CubesSlicedOnion(0, createTime);
                     break;
             }
             return ingredient;

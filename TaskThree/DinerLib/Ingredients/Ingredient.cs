@@ -11,10 +11,12 @@ namespace DinerLib.Ingredients
         public abstract IngredientTypes Type { get; }
         public abstract ProcessingTypes ProcessingType { get; }
         public double CostPrice { get; set; }
+        public DateTime CreateTime { get; set; }
 
-        public Ingredient (double costPrice)
+        public Ingredient(double costPrice, DateTime createTime)
         {
             CostPrice = costPrice;
+            CreateTime = createTime;
         }
 
         public override bool Equals(object obj)

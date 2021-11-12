@@ -1,4 +1,5 @@
 ﻿using DinerLib.Ingredients;
+using DinerLib.Processors.ProcessQueues;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace DinerLib.Processors.Slicers
         public ISlicedIngredient ProcessIngredient(IngredientTypes ingredientType)
         {
             IConcreteSlicer slicer = null;
+            var queue = new ProcessQueue(ProcessingTypes.Slicing, _productionCapacity, _processTimeInMinutes);
             switch (_slicingType)
             {
                 case SlicingTypes.Cubes:
@@ -31,7 +33,7 @@ namespace DinerLib.Processors.Slicers
                     slicer = new StripesSlicer();
                     break;
             }
-            return slicer.ProcessIngredient(ingredientType);
+            return slicer.ProcessIngredient(ingredientType, queue.AddIngredient());
         }
     }
 }

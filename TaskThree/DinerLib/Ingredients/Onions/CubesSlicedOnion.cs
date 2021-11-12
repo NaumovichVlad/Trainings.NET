@@ -8,7 +8,7 @@ namespace DinerLib.Ingredients.Onions
 {
     internal class CubesSlicedOnion : SlicedOnion
     {
-        public CubesSlicedOnion(double costPrice) : base(costPrice)
+        public CubesSlicedOnion(double costPrice, DateTime createTime) : base(costPrice, createTime)
         { }
 
         public override SlicingTypes SlicingType => SlicingTypes.Cubes;

@@ -8,8 +8,7 @@ namespace DinerLib.Ingredients
 {
     public abstract class Carrot : Ingredient
     {
-        public Carrot(double costPrice) 
-            : base(costPrice)
+        protected Carrot(double costPrice, DateTime createTime) : base(costPrice, createTime)
         { }
 
         public override IngredientTypes Type { get => IngredientTypes.Carrot; }

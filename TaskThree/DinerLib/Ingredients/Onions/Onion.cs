@@ -8,7 +8,7 @@ namespace DinerLib.Ingredients.Onions
 {
     public abstract class Onion : Ingredient
     {
-        public Onion(double costPrice) : base(costPrice)
+        protected Onion(double costPrice, DateTime createTime) : base(costPrice, createTime)
         { }
 
         public override IngredientTypes Type => IngredientTypes.Onion;

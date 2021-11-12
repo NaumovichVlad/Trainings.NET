@@ -8,7 +8,7 @@ namespace DinerLib.Ingredients.Onions
 {
     public abstract class SlicedOnion : Onion, ISlicedIngredient
     {
-        protected SlicedOnion(double costPrice) : base(costPrice)
+        protected SlicedOnion(double costPrice, DateTime createTime) : base(costPrice, createTime)
         { }
 
         public override ProcessingTypes ProcessingType => ProcessingTypes.Slicing;

@@ -9,6 +9,6 @@ namespace DinerLib.Processors.Slicers
 {
     internal interface IConcreteSlicer
     {
-        ISlicedIngredient ProcessIngredient(IngredientTypes ingredientType);
+        ISlicedIngredient ProcessIngredient(IngredientTypes ingredientType, DateTime createTime);
     }
 }

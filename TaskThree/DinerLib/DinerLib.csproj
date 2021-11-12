@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +55,7 @@
     <Compile Include="Ingredients\Onions\Onion.cs" />
     <Compile Include="Ingredients\Onions\SlicedOnion.cs" />
     <Compile Include="Ingredients\Onions\StripesSlicedOnion.cs" />
+    <Compile Include="Processors\ProcessQueues\IProcessQueue.cs" />
     <Compile Include="Processors\ProcessQueues\ProcessQueue.cs" />
     <Compile Include="Processors\Slicers\CubesSlicer.cs" />
     <Compile Include="Processors\IConcreteIngredientProcessor.cs" />
@@ -64,6 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Positions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
