@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace DinerLib.Ingredients
 {
-    public class Carrot : Ingredient
+    public abstract class Carrot : Ingredient
     {
         public Carrot(double costPrice) 
             : base(costPrice)
         { }
 
         public override IngredientTypes Type { get => IngredientTypes.Carrot; }
-        public override ProcessingTypes ProcessingType { get => ProcessingTypes.None; }
     }
 }

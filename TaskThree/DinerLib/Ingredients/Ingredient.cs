@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DinerLib.Ingredients
 {
-    public abstract class Ingredient
+    public abstract class Ingredient : IIngredient
     {
         public abstract IngredientTypes Type { get; }
         public abstract ProcessingTypes ProcessingType { get; }

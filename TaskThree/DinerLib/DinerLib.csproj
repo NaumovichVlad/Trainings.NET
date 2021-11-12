@@ -42,8 +42,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums.cs" />
+    <Compile Include="FileManager\ProcessQueue\ProcessQueueConnection.cs" />
+    <Compile Include="FileManager\ProcessQueue\ProcessQueueJson.cs" />
     <Compile Include="Ingredients\Carrot.cs" />
+    <Compile Include="Ingredients\Onions\CubesSlicedOnion.cs" />
+    <Compile Include="Ingredients\IIngredient.cs" />
     <Compile Include="Ingredients\Ingredient.cs" />
+    <Compile Include="Ingredients\ISlicedIngredient.cs" />
+    <Compile Include="Ingredients\Onions\Onion.cs" />
+    <Compile Include="Ingredients\Onions\SlicedOnion.cs" />
+    <Compile Include="Ingredients\Onions\StripesSlicedOnion.cs" />
+    <Compile Include="Processors\ProcessQueues\ProcessQueue.cs" />
+    <Compile Include="Processors\Slicers\CubesSlicer.cs" />
+    <Compile Include="Processors\IConcreteIngredientProcessor.cs" />
+    <Compile Include="Processors\Slicers\IConcreteSlicer.cs" />
+    <Compile Include="Processors\IIngredientProcessor.cs" />
+    <Compile Include="Processors\IngredientProcessor.cs" />
+    <Compile Include="Processors\Slicers\Slicer.cs" />
+    <Compile Include="Processors\Slicers\StripesSlicer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

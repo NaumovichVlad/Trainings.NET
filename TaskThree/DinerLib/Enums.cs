@@ -16,6 +16,13 @@ namespace DinerLib
 
     public enum ProcessingTypes
     {
-        None
+        None,
+        Slicing
+    }
+
+    public enum SlicingTypes
+    {
+        Cubes,
+        Stripes,
     }
 }
