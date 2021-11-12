@@ -25,4 +25,9 @@ namespace DinerLib
         Cubes,
         Stripes,
     }
+
+    public enum DishNames
+    {
+        SaladMoskow
+    }
 }

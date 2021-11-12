@@ -11,5 +11,6 @@ namespace DinerLib.Ingredients
         IngredientTypes Type { get; }
         ProcessingTypes ProcessingType { get; }
         double CostPrice { get; set; }
+        DateTime CreateTime { get; set; }
     }
 }

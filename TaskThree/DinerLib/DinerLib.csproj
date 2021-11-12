@@ -55,6 +55,9 @@
     <Compile Include="Ingredients\Onions\Onion.cs" />
     <Compile Include="Ingredients\Onions\SlicedOnion.cs" />
     <Compile Include="Ingredients\Onions\StripesSlicedOnion.cs" />
+    <Compile Include="Positions\Dish.cs" />
+    <Compile Include="Positions\IDish.cs" />
+    <Compile Include="Positions\SaladMoscow.cs" />
     <Compile Include="Processors\ProcessQueues\IProcessQueue.cs" />
     <Compile Include="Processors\ProcessQueues\ProcessQueue.cs" />
     <Compile Include="Processors\Slicers\CubesSlicer.cs" />
@@ -65,10 +68,10 @@
     <Compile Include="Processors\Slicers\Slicer.cs" />
     <Compile Include="Processors\Slicers\StripesSlicer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recipes\IngredientForRecipe.cs" />
+    <Compile Include="Recipes\Recipe.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Positions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
