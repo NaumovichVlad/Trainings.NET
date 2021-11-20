@@ -1,5 +1,6 @@
 ﻿using DinerLib.Ingredients;
 using DinerLib.Recipes;
+using DinerLib.Reports;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,15 +9,17 @@ using System.Threading.Tasks;
 
 namespace DinerLib.Positions
 {
-    public abstract class Dish : IDish
+    public abstract class Dish : IDish, ILoggable
     {
-        private readonly Recipe _recipe;
+        private readonly IRecipe _recipe;
         public List<IIngredient> Ingredients { get; set; }
         public int CookingTime => ComputeCookingTime();
         public double CostPrice => ComputeCostPrice();
         public abstract DishNames Name { get; }
+        public string LogType => Name.ToString();
+        public DateTime CreateTime => ComputeCreateTime();
 
-        public Dish(List<IIngredient> ingredients, Recipe recipe)
+        public Dish(List<IIngredient> ingredients, IRecipe recipe)
         {
             Ingredients = ingredients;
             _recipe = recipe;
@@ -27,6 +30,11 @@ namespace DinerLib.Positions
         {
             var maxTime = Ingredients.Max(i => i.CreateTime);
             return (maxTime - DateTime.Now).Minutes;
+        }
+
+        private DateTime ComputeCreateTime()
+        {
+            return Ingredients.Max(i => i.CreateTime);
         }
 
         private double ComputeCostPrice()

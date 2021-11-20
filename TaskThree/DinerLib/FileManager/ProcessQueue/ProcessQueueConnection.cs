@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 namespace DinerLib.FileManager.ProcessQueue
 {
+    /// <summary>
+    /// container with file paths
+    /// </summary>
     public class ProcessQueueConnection
     {
-        private readonly string _slicerConnectionString = "../../../Data/Queues/slice_queue.json";
+        private readonly string _connectionString = "../../../Data/Queues/{0}.json";
         protected string GetPath(ProcessingTypes type)
         {
-            switch (type)
-            {
-                case ProcessingTypes.Slicing:
-                    return _slicerConnectionString;
-            }
-            return string.Empty;
+            return string.Format(_connectionString, type);
         }
     }
 }

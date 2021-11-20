@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace DinerLib.FileManager.ProcessQueue
 {
+    /// <summary>
+    /// class for saving queue state
+    /// </summary>
     public class ProcessQueueJson : ProcessQueueConnection
     {
         private readonly string _connectionString;

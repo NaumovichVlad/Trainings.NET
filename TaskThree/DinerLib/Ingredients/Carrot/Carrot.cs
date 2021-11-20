@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DinerLib.Ingredients
+namespace DinerLib.Ingredients.Carrot
 {
     public abstract class Carrot : Ingredient
     {

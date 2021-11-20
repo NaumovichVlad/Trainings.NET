@@ -1,16 +1,19 @@
 ﻿using DinerLib.Ingredients;
 using DinerLib.Processors.Slicers;
+using DinerLib.Reports;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DinerLib.Processors
 {
     internal class IngredientProcessor : IIngredientProcessor
     {
-
+        /// <summary>
+        /// Process ingredient
+        /// </summary>
+        /// <param name="ingredientType">ingredientType</param>
+        /// <param name="processingType">process type</param>
+        /// <param name="concreteProcessingType">concrete process type</param>
+        /// <returns></returns>
         public IIngredient ProcessIngredient(string ingredientType, string processingType, string concreteProcessingType)
         {
             IConcreteIngredientProcessor<IIngredient> ingredientProcessor = null;
@@ -23,7 +26,10 @@ namespace DinerLib.Processors
                     ingredientProcessor = new Slicer(slicerType);
                     break;
             }
-            return ingredientProcessor.ProcessIngredient(ingredientTypeEnum);
+            IIngredient ingredient = ingredientProcessor.ProcessIngredient(ingredientTypeEnum);
+            var logger = new IngredientLogger();
+            logger.AddNote(ingredient as Ingredient);
+            return ingredient;
         }
     }
 }

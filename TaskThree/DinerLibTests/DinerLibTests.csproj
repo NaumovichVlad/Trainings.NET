@@ -53,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileManager\ProcessQueue\ProcessQueueJsonTests.cs" />
+    <Compile Include="FileManager\Recipes\RecipesJsonTests.cs" />
+    <Compile Include="KitchenTest.cs" />
     <Compile Include="Processors\ProcessQueueTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DinerLib.Ingredients.Onions
 {
-    internal class CubesSlicedOnion : SlicedOnion
+    public class CubesSlicedOnion : SlicedOnion
     {
         public CubesSlicedOnion(double costPrice, DateTime createTime) : base(costPrice, createTime)
         { }

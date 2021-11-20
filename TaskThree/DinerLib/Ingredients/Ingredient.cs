@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DinerLib.Reports;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +7,25 @@ using System.Threading.Tasks;
 
 namespace DinerLib.Ingredients
 {
-    public abstract class Ingredient : IIngredient
+    /// <summary>
+    /// Ingredient for dish
+    /// </summary>
+    public abstract class Ingredient : IIngredient, ILoggable
     {
+        /// <summary>
+        /// Ingredient type
+        /// </summary>
         public abstract IngredientTypes Type { get; }
+        /// <summary>
+        /// Processing type
+        /// </summary>
         public abstract ProcessingTypes ProcessingType { get; }
+        /// <summary>
+        /// Cost price
+        /// </summary>
         public double CostPrice { get; set; }
         public DateTime CreateTime { get; set; }
+        public string LogType => Type.ToString();
 
         public Ingredient(double costPrice, DateTime createTime)
         {
