@@ -9,7 +9,9 @@ using System.Threading;
 
 namespace ServerLib.Tcp
 {
-    
+    /// <summary>
+    /// Server for solving equations
+    /// </summary>
     public class Server
     {
         private readonly int _port;
@@ -18,6 +20,10 @@ namespace ServerLib.Tcp
         private readonly List<INewClientConnectedHandler> _handlers;
         private readonly NewClientConnectedEvent _clientEvent;
 
+
+        /// <param name="port">Server port</param>
+        /// <param name="ipAddress">Server ip adress</param>
+        /// <param name="handlers">Server handlers</param>
         public Server(int port, string ipAddress, List<INewClientConnectedHandler> handlers)
         {
             _port = port;
@@ -28,6 +34,9 @@ namespace ServerLib.Tcp
                 _clientEvent.NewClientConnected += handler.OnConnected;
         }
 
+        /// <summary>
+        /// Start server
+        /// </summary>
         public void Start()
         {
             try

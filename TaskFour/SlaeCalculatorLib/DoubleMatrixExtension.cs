@@ -8,6 +8,13 @@ namespace SlaeCalculatorLib
 {
     public static class DoubleMatrixExtension
     {
+        /// <summary>
+        /// Getting a range of values
+        /// </summary>
+        /// <param name="matrix">The original matrix</param>
+        /// <param name="firstIndex">Beginning of the range</param>
+        /// <param name="lastIndex">Ending of the range</param>
+        /// <returns>Double[,] range</returns>
         public static double[,] GetRange(this double[,] matrix, int firstIndex, int lastIndex)
         {
             var range = new double[lastIndex - firstIndex + 1, matrix.GetLength(1)];

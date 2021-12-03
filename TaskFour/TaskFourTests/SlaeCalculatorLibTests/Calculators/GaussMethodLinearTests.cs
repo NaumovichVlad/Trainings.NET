@@ -2,18 +2,15 @@
 using SlaeCalculatorLib.Calculators;
 using System;
 
-namespace TaskFourTests.SlaeCalculatorLibTests.Calcualtors
+namespace TaskFourTests.SlaeCalculatorLibTests.Calculators
 {
-    /// <summary>
-    /// Сводное описание для GaussMethodParallelTests
-    /// </summary>
     [TestClass]
-    public class GaussMethodParallelTests
+    public class GaussMethodLinearTests
     {
         [TestMethod]
         public void Compute_TestOne()
         {
-            var calculator = new GaussMethodParallel();
+            var calculator = new GaussMethodLinear();
             var testA = new double[4, 4]
             {
                 { 1, 5, 3, 2 },

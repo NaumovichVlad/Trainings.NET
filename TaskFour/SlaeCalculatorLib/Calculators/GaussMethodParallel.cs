@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SlaeCalculatorLib.Calculators
 {
+    /// <summary>
+    /// Parallel solution of a system of equations by the Gauss method
+    /// </summary>
     public class GaussMethodParallel : GaussMethodBase
     {
         private int _processCount;

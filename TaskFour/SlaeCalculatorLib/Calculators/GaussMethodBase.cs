@@ -2,8 +2,17 @@
 
 namespace SlaeCalculatorLib.Calculators
 {
+    /// <summary>
+    /// Solving a system of equations by the Gauss method
+    /// </summary>
     public abstract class GaussMethodBase : ICalculator
     {
+        /// <summary>
+        /// Solve a system of equations
+        /// </summary>
+        /// <param name="a">Matrix A</param>
+        /// <param name="b">Coefficients B</param>
+        /// <returns>Array X</returns>
         public abstract double[] Compute(double[,] a, double[] b);
 
         protected virtual void ExecuteForwardPhaseIteration(double[,] matrix, double[] vector, int iteration)
@@ -19,6 +28,9 @@ namespace SlaeCalculatorLib.Calculators
             }
         }
 
+        /// <summary>
+        /// Back Phase
+        /// </summary>
         protected void ExecuteBackPhaseIteration(double[,] matrix, double[] vector, double[] answers, int iteration)
         {
             double sum = 0;
@@ -28,6 +40,12 @@ namespace SlaeCalculatorLib.Calculators
             answers[iteration] = (vector[iteration] - sum) / matrix[iteration, iteration];
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="matrix">Matrix A</param>
+        /// <param name="iteration">Iteration number</param>
+        /// <returns>Max Element</returns>
         protected int FindMainElement(double[,] matrix, int iteration)
         {
             var max = Math.Abs(matrix[iteration, iteration]);

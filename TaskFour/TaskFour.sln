@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.31825.309
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlaeCalculatorLib", "SlaeCalculatorLib\SlaeCalculatorLib.csproj", "{F73B7BB2-1B0E-473B-8729-321E3E970E74}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E40DD08A-A475-436C-9F30-1232DB0CDB65}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFourTests", "TaskFourTests\TaskFourTests.csproj", "{B8D8F6E4-BA7B-401E-B1BE-9BF3C22DDB92}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerLib", "ServerLib\ServerLib.csproj", "{1A557798-3F0F-44A3-8EC6-990661CABCD5}"

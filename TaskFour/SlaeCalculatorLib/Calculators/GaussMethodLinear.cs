@@ -2,6 +2,9 @@
 
 namespace SlaeCalculatorLib.Calculators
 {
+    /// <summary>
+    /// Linear solution of a system of equations by the Gauss method
+    /// </summary>
     public class GaussMethodLinear : GaussMethodBase
     {
         public override double[] Compute(double[,] a, double[] b)
