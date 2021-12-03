@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SlaeCalculatorLib.Calculators
+namespace SlaeCalculatorLib
 {
-    public interface IGaussMethod
+    public class FileManager
     {
-        double[] Compute(double[,] a, double[] b);
     }
 }

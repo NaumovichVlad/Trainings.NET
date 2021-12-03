@@ -2,11 +2,11 @@
 
 namespace SlaeCalculatorLib.Calculators
 {
-    public abstract class GaussMethodBase : IGaussMethod
+    public abstract class GaussMethodBase : ICalculator
     {
         public abstract double[] Compute(double[,] a, double[] b);
 
-        protected void ExecuteForwardPhaseIteration(double[,] matrix, double[] vector, int iteration)
+        protected virtual void ExecuteForwardPhaseIteration(double[,] matrix, double[] vector, int iteration)
         {
             var n = vector.Length;
             for (int i = iteration + 1; i < n; i++)
