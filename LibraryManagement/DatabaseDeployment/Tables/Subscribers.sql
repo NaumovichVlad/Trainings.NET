@@ -3,6 +3,6 @@
 	[Surname] NVARCHAR(25) NOT NULL,
 	[Name] NVARCHAR(20) NOT NULL,
 	[MiddleName] NVARCHAR(20) NOT NULL,
-	[Gender] NVARCHAR(10) NOT NULL,
+	[Gender] BIT NOT NULL,
 	[Address] NVARCHAR(MAX) NOT NULL
 );

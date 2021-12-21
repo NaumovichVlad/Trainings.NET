@@ -1,4 +1,0 @@
-﻿CREATE TABLE [dbo].[Conditions] (
-	[Id] INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,
-	[Name] NVARCHAR(20) UNIQUE NOT NULL
-);

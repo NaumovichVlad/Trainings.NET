@@ -3,7 +3,5 @@
 	[Title] NVARCHAR(MAX) NOT NULL,
 	[AuthorId] INT NOT NULL,
 	[GenreId] INT NOT NULL,
-	[YearOfPuplication] INT NOT NULL,
-	[Description] NVARCHAR(MAX),
-	[ConditionId] INT NOT NULL,
+	[Condition] INT NOT NULL,
 )

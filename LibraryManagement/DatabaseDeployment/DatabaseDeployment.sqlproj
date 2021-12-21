@@ -63,18 +63,14 @@
     <Build Include="Tables\Authors.sql" />
     <Build Include="Tables\Genres.sql" />
     <Build Include="Tables\Books.sql" />
-    <Build Include="Tables\Conditions.sql" />
     <Build Include="Tables\Subscribers.sql" />
     <Build Include="Tables\Orders.sql" />
     <Build Include="Tables\BooksInOrders.sql" />
     <Build Include="FK\FK_Books_Genres.sql" />
     <Build Include="FK\FK_Books_Authors.sql" />
-    <Build Include="FK\FK_Books_Conditions.sql" />
     <Build Include="FK\FK_Orders_Subscribers.sql" />
     <Build Include="FK\FK_BooksInOrders_Orders.sql" />
     <Build Include="FK\FK_BooksInOrders_Books.sql" />
-    <Build Include="FK\FK_BooksInOrders_Conditions_Before.sql" />
-    <Build Include="FK\FK_BooksInOrders_Conditions_After.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />

@@ -2,7 +2,7 @@
 	[Id] INT IDENTITY(1, 1) NOT NULL,
 	[OrderId] INT NOT NULL,
 	[BookId] INT NOT NULL,
-	[ConditionIdBeforeReceiving] INT NOT NULL,
-	[ConditionIdAfterReturning] INT,
+	[ConditionBeforeReceiving] INT NOT NULL,
+	[ConditionAfterReturning] INT,
 	[IsReturned] BIT NOT NULL
 );
