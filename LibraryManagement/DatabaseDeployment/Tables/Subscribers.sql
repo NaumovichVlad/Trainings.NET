@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Subscribers] (
+	[Id] INT IDENTITY(1, 1) NOT NULL PRIMARY KEY,
+	[Surname] NVARCHAR(25) NOT NULL,
+	[Name] NVARCHAR(20) NOT NULL,
+	[MiddleName] NVARCHAR(20) NOT NULL,
+	[Gender] NVARCHAR(10) NOT NULL,
+	[Address] NVARCHAR(MAX) NOT NULL
+);
