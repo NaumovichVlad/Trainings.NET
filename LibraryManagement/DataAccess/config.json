@@ -1,0 +1,3 @@
+{
+  "MsSqlConnection": "Server=(localdb)\\MSSQLLocalDB;Database=library;Trusted_Connection=True;"
+}
