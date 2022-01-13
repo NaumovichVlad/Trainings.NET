@@ -1,13 +1,11 @@
 ﻿using Autofac;
 using DataAccess.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess.Config
 {
+    /// <summary>
+    /// Class for layer dependency injection
+    /// </summary>
     public class DependencyInjection : Module
     {
         private readonly string _connectionString;

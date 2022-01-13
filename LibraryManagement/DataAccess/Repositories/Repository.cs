@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace DataAccess.Repositories
 {
+    /// <summary>
+    /// Repository for data access
+    /// </summary>
     public abstract class Repository<T> : IRepository<T>
         where T : EntityBase
     {

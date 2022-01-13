@@ -1,17 +1,17 @@
 ﻿using AutoMapper;
 using BusinessLogic.Dtos;
-using BusinessLogic.Reports.Models;
+using BusinessLogic.Interfaces;
 using DataAccess.Interfaces;
 using DataAccess.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogic.Services
 {
-    public class CommonService
+    /// <summary>
+    /// Class for data processing
+    /// </summary>
+    public class CommonService : ICommonService
     {
         private readonly IRepository<Book> _booksRepository;
         private readonly IRepository<Subscriber> _subscribersRepository;
@@ -20,7 +20,7 @@ namespace BusinessLogic.Services
         private readonly IRepository<Author> _authorsRepository;
         private readonly IRepository<Genre> _genresRepository;
         private readonly IMapper _mapper;
-        public CommonService(IRepository<Book> booksRepository, IRepository<Subscriber> subscribersRepository, 
+        public CommonService(IRepository<Book> booksRepository, IRepository<Subscriber> subscribersRepository,
             IRepository<Order> ordersRepository, IRepository<BooksInOrder> booksInOrdersRepository,
             IRepository<Author> authorsRepository, IRepository<Genre> genresRepository, IMapper mapper)
         {
@@ -32,16 +32,9 @@ namespace BusinessLogic.Services
             _genresRepository = genresRepository;
             _mapper = mapper;
         }
-
-        public List<BookReportModel> OrdersByBooksCount()
-        {
-            var ordersByBooksCount = _booksInOrdersRepository.GetList().GroupBy(o => o.BookId).Select(g => new BookReportModel
-            {
-                Book = _mapper.Map<BookDto>(_booksRepository.GetById(g.Key)),
-                Count = g.Count()
-            }).ToList();
-            return ordersByBooksCount;
-        }
+        /// <summary>
+        /// Most popular author
+        /// </summary>
         public AuthorDto GetMostPopularAuthor()
         {
             var ordersGroup = _mapper.Map<List<BooksInOrderDto>>(_booksInOrdersRepository.GetList()).GroupBy(o => o.BookId);
@@ -52,6 +45,9 @@ namespace BusinessLogic.Services
             return _mapper.Map<AuthorDto>(_authorsRepository.GetById(authorsGroup.First(a => a.Count == maxCount).AuthorId));
         }
 
+        /// <summary>
+        /// Most reading subscriber
+        /// </summary>
         public SubscriberDto GetMostReadingSubscriber()
         {
             var ordersGroup = _booksInOrdersRepository.GetList().GroupBy(o => o.OrderId);
@@ -62,6 +58,9 @@ namespace BusinessLogic.Services
             return _mapper.Map<SubscriberDto>(_subscribersRepository.GetById(subscribersGroup.First(s => s.Count == maxCount).SubscriberId));
         }
 
+        /// <summary>
+        /// Get most popular genre
+        /// </summary>
         public GenreDto GetMostPopularGenre()
         {
             var ordersGroup = _booksInOrdersRepository.GetList().GroupBy(o => o.BookId);

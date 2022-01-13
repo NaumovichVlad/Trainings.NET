@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="EPPlus" Version="5.8.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -14,7 +15,6 @@
 
   <ItemGroup>
     <Folder Include="Enums\" />
-    <Folder Include="Reports\FileManager\" />
   </ItemGroup>
 
 </Project>

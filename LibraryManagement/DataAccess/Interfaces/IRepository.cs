@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DataAccess.Interfaces
 {
+    /// <summary>
+    /// Repository for data access
+    /// </summary>
     public interface IRepository<T>
         where T : EntityBase
     {

@@ -29,7 +29,7 @@ namespace DataAccess.Repositories
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                var sqlExpression = "DELETE FROM Genres WHERE Id = @id)";
+                var sqlExpression = "DELETE FROM Genres WHERE Id = @id";
                 var command = new SqlCommand(sqlExpression, connection);
                 var idParam = new SqlParameter("@id", id);
                 command.Parameters.Add(idParam);
